@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        userAuthenticate = UserAuthenticateViewModel()
+        userAuthenticate?.login(classReference: self, email: "bbek@gmail.com", password: "admin123")
     }
     
     // Display Error when there is error in authentication
@@ -26,6 +28,10 @@ class ViewController: UIViewController {
     // Call back when User Signup Success
     public func userSignupSuccess(userModel: User){
         print(userModel.lastName)
+    }
+    
+    public func userSigninSuccess(userModel: User){
+        print(userModel.userId)
     }
 
 }
