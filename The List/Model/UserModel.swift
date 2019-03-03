@@ -9,21 +9,27 @@
 struct User {
     var userEmail: String
     var password: String
-    var userId: String?
-    var name: String
+    var userId: String
+    var firstName: String
+    var lastName: String
+    var token: String
     
     // Empty Intialization
     init(){
         userEmail = ""
         password = ""
         userId = ""
-        name = ""
+        firstName = ""
+        lastName = ""
+        token = ""
     }
     
     // Intialization for User Signup
-    init(userEmail: String, userPassword: String, name: String){
+    init(userEmail: String, userPassword: String, firstName: String, lastName: String){
+        self.init() // Intializing all Default value first
         self.userEmail = userEmail
         self.password = userPassword
-        self.name = name
+        self.firstName = firstName
+        self.lastName = lastName
     }
 }

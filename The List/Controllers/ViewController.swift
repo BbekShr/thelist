@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -15,16 +16,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let user: User = User.init(userEmail: "bbek@gmail.com", userPassword: "admin123", name: "BBEK International")
-        userAuthenticate = UserAuthenticateViewModel(user: user)
-        userAuthenticate?.signUp(user: user, classRefernce: self) // Sign up Logic
     }
     
+    // Display Error when there is error in authentication
     public func displayError(errorMsg: String){
-        print("I am inside")
         print(errorMsg)
     }
 
+    // Call back when User Signup Success
+    public func userSignupSuccess(userModel: User){
+        print(userModel.lastName)
+    }
 
 }
 

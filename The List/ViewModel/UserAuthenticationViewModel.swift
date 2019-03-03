@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 class UserAuthenticateViewModel {
-    let user: User
+    var user: User
     private var message: String // Output Error Message Code for custom Message Display
     
     init(user: User){
@@ -19,10 +19,11 @@ class UserAuthenticateViewModel {
     }
 }
 
+// Signup User Extension Only
 extension UserAuthenticateViewModel {
     
     // Sign up User
-    func signUp(user: User, classRefernce: ViewController){
+    func signUp(classRefernce: ViewController){
         Auth.auth().createUser(withEmail: user.userEmail, password: user.password) { (authData, error) in
             print("User is Inside Signup Process")
             if let errorObj: Error = error { // There is an error creating the account
@@ -30,10 +31,22 @@ extension UserAuthenticateViewModel {
                 classRefernce.displayError(errorMsg: self.message)
             }
             if let authObj = authData { // The signup successfully Completed
-                print("Inside Success")
-                print(authObj)
+                self.user.userId = authObj.user.uid // Set the newly created User ID
+                self.createUserEntry() // Creates the User profile in the database
+                classRefernce.userSignupSuccess(userModel: self.user) // Call the callback function after success
             }
         }
     }
     
+    // Creates a User Entry into the realtime database
+    private func createUserEntry(){
+        let databaseRef = DatabaseReferenceModel() // Referenece to Database Reference class
+        let userNode = databaseRef.ref.child("Users").child(user.userId) // Particular User Node
+        userNode.setValue([
+            "FirstName": user.firstName,
+            "LastName" : user.lastName,
+            "Active" : true
+            ]) // Create the json tree for account creation
+    }
+
 }
