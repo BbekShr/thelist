@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		498F0010222BA8BA003E7353 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F000F222BA8BA003E7353 /* UserModel.swift */; };
+		498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		259FD0748DA866BBC52E2943 /* Pods-The List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.debug.xcconfig"; sourceTree = "<group>"; };
 		3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		498F000F222BA8BA003E7353 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		498F000C222BA853003E7353 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB2088A822279C180026A15F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		498F000D222BA867003E7353 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB2088AA22279C180026A15F /* Main.storyboard */,
+				FB2088AF22279C1D0026A15F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		498F000E222BA889003E7353 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				498F000F222BA8BA003E7353 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		498F0011222BA8C4003E7353 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		73DEF5C54D3CAD0EF6ABCCFB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +117,12 @@
 		FB2088A522279C180026A15F /* The List */ = {
 			isa = PBXGroup;
 			children = (
+				498F0011222BA8C4003E7353 /* ViewModel */,
+				498F000E222BA889003E7353 /* Model */,
+				498F000D222BA867003E7353 /* View */,
+				498F000C222BA853003E7353 /* Controllers */,
 				FB2088A622279C180026A15F /* AppDelegate.swift */,
-				FB2088A822279C180026A15F /* ViewController.swift */,
-				FB2088AA22279C180026A15F /* Main.storyboard */,
 				FB2088AD22279C1D0026A15F /* Assets.xcassets */,
-				FB2088AF22279C1D0026A15F /* LaunchScreen.storyboard */,
 				FB2088B222279C1D0026A15F /* Info.plist */,
 				FB2088D622288B520026A15F /* GoogleService-Info.plist */,
 			);
@@ -223,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2088A922279C180026A15F /* ViewController.swift in Sources */,
+				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
+				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
 				FB2088A722279C180026A15F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +413,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZJUMGGVX;
 				INFOPLIST_FILE = "The List/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AppsStudio.The-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -389,7 +432,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZJUMGGVX;
 				INFOPLIST_FILE = "The List/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AppsStudio.The-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
