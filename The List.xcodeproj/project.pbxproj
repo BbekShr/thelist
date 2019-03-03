@@ -141,7 +141,6 @@
 				FB2088A022279C180026A15F /* Frameworks */,
 				FB2088A122279C180026A15F /* Resources */,
 				550FC503C8C088AA2705243D /* [CP] Embed Pods Frameworks */,
-				C25F54BB8AAEC8B164C1F42D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,33 +205,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-The List/Pods-The List-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-The List/Pods-The List-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The List/Pods-The List-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C25F54BB8AAEC8B164C1F42D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The List/Pods-The List-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The List/Pods-The List-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DBB4A94FF79033573E148B00 /* [CP] Check Pods Manifest.lock */ = {

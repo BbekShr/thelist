@@ -6,7 +6,24 @@
 //  Copyright © 2019 123 Apps Studio LLC. All rights reserved.
 //
 
-struct UserAuth {
-    let userName: String
-    let password: String
+struct User {
+    var userEmail: String
+    var password: String
+    var userId: String?
+    var name: String
+    
+    // Empty Intialization
+    init(){
+        userEmail = ""
+        password = ""
+        userId = ""
+        name = ""
+    }
+    
+    // Intialization for User Signup
+    init(userEmail: String, userPassword: String, name: String){
+        self.userEmail = userEmail
+        self.password = userPassword
+        self.name = name
+    }
 }

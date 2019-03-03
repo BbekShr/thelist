@@ -7,5 +7,6 @@ target 'The List' do
 
   # Pods for The List
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end
