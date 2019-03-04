@@ -12,6 +12,9 @@
 		498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */; };
 		498F0017222CB2CF003E7353 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F0016222CB2CF003E7353 /* SignUp.storyboard */; };
 		498F0019222CB2E6003E7353 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0018222CB2E6003E7353 /* SignUpViewController.swift */; };
+		498F001B222CBA80003E7353 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F001A222CBA80003E7353 /* ToDoList.storyboard */; };
+		498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F001C222CBACF003E7353 /* ToDoListViewController.swift */; };
+		498F0020222CBF19003E7353 /* AuthenticateRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F001F222CBF19003E7353 /* AuthenticateRoute.swift */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 		498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceModel.swift; sourceTree = "<group>"; };
 		498F0016222CB2CF003E7353 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		498F0018222CB2E6003E7353 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		498F001A222CBA80003E7353 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
+		498F001C222CBACF003E7353 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		498F001F222CBF19003E7353 /* AuthenticateRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateRoute.swift; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 			children = (
 				FB2088A822279C180026A15F /* ViewController.swift */,
 				498F0018222CB2E6003E7353 /* SignUpViewController.swift */,
+				498F001C222CBACF003E7353 /* ToDoListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -67,6 +74,7 @@
 				FB2088AA22279C180026A15F /* Main.storyboard */,
 				FB2088AF22279C1D0026A15F /* LaunchScreen.storyboard */,
 				498F0016222CB2CF003E7353 /* SignUp.storyboard */,
+				498F001A222CBA80003E7353 /* ToDoList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -86,6 +94,14 @@
 				498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		498F001E222CBEA5003E7353 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				498F001F222CBF19003E7353 /* AuthenticateRoute.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		73DEF5C54D3CAD0EF6ABCCFB /* Pods */ = {
@@ -126,6 +142,7 @@
 		FB2088A522279C180026A15F /* The List */ = {
 			isa = PBXGroup;
 			children = (
+				498F001E222CBEA5003E7353 /* Router */,
 				498F0011222BA8C4003E7353 /* ViewModel */,
 				498F000E222BA889003E7353 /* Model */,
 				498F000D222BA867003E7353 /* View */,
@@ -198,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498F001B222CBA80003E7353 /* ToDoList.storyboard in Resources */,
 				FB2088B122279C1D0026A15F /* LaunchScreen.storyboard in Resources */,
 				FB2088D722288B520026A15F /* GoogleService-Info.plist in Resources */,
 				FB2088AE22279C1D0026A15F /* Assets.xcassets in Resources */,
@@ -258,11 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498F0020222CBF19003E7353 /* AuthenticateRoute.swift in Sources */,
 				498F0019222CB2E6003E7353 /* SignUpViewController.swift in Sources */,
 				FB2088A922279C180026A15F /* ViewController.swift in Sources */,
 				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
 				498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */,
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
+				498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */,
 				FB2088A722279C180026A15F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

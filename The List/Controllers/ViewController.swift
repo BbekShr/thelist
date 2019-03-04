@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Firebase
 
 class ViewController: UIViewController {
 
     var userAuthenticate: UserAuthenticateViewModel?
+    var route: AuthenticateRoute = AuthenticateRoute()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -47,8 +47,11 @@ extension ViewController {
         passwordText.text = "" // Clear Password Text
     }
     
+    // Process when Signin is successfull
     public func userSigninSuccess(userModel: User){
         errorMessageText.text = "" // Clear the error message
+        let controller = route.routeToMainScreen(userModel: userModel) // Router configuration completed and ready to route
+        self.present(controller, animated: true, completion: nil)
     }
 }
 

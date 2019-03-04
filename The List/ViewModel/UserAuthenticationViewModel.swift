@@ -25,7 +25,7 @@ class UserAuthenticateViewModel {
 extension UserAuthenticateViewModel {
     
     // Sign up User
-    func signUp(classRefernce: ViewController, email: String, password: String, firstname: String, lastname: String){
+    func signUp(classRefernce: SignUpViewController, email: String, password: String, firstname: String, lastname: String){
         userModel.userEmail = email
         userModel.password = password
         userModel.firstName = firstname
@@ -39,7 +39,7 @@ extension UserAuthenticateViewModel {
             if let authObj = authData { // The signup successfully Completed
                 self.userModel.userId = authObj.user.uid // Set the newly created User ID
                 self.createUserEntry() // Creates the User profile in the database
-                // classRefernce.userSignupSuccess(userModel: self.userModel) // Call the callback function after success
+                classRefernce.userSignupSuccess(userModel: self.userModel) // Call the callback function after success
             }
         }
     }

@@ -10,24 +10,46 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var firstNameText: UITextField!
+    @IBOutlet weak var lastNameText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var errorMessageText: UILabel!
+    
+    private let route: AuthenticateRoute = AuthenticateRoute()
+    
+    private var userAuthenticateViewModel: UserAuthenticateViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func signUpAction(_ sender: Any) {
+        let firstName: String = firstNameText.text!
+        let lastName: String = lastNameText.text!
+        let email: String = emailText.text!
+        let password: String = passwordText.text!
+        userAuthenticateViewModel = UserAuthenticateViewModel()
+        userAuthenticateViewModel?.signUp(classRefernce: self, email: email, password: password, firstname: firstName, lastname: lastName) // User Signup Process
     }
     
     @IBAction func goBackLoginAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// UserAuthenticationViewModel Callback functions
+extension SignUpViewController{
+    // Display Error when there is error in authentication
+    public func displayError(errorMsg: String){
+        errorMessageText.text = errorMsg // Set error message in the screen
     }
-    */
-
+    
+    // Process when Signup is successfull
+    public func userSignupSuccess(userModel: User){
+        let controller = route.routeToMainScreen(userModel: userModel)
+        self.present(controller, animated: true, completion: nil)
+    }
 }
