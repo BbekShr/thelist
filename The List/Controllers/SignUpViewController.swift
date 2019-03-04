@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageText: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     private let route: AuthenticateRoute = AuthenticateRoute()
     
@@ -23,10 +24,11 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        addBlurEffect(backgroundImage: backgroundImage)
     }
     
     @IBAction func signUpAction(_ sender: Any) {
+        startSpinner(viewObject: view)
         let firstName: String = firstNameText.text!
         let lastName: String = lastNameText.text!
         let email: String = emailText.text!
@@ -44,11 +46,13 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController{
     // Display Error when there is error in authentication
     public func displayError(errorMsg: String){
+        removeSpinner()
         errorMessageText.text = errorMsg // Set error message in the screen
     }
     
     // Process when Signup is successfull
     public func userSignupSuccess(userModel: User){
+        removeSpinner()
         let controller = route.routeToMainScreen(userModel: userModel)
         self.present(controller, animated: true, completion: nil)
     }

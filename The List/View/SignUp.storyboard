@@ -124,6 +124,7 @@
                         <viewLayoutGuide key="safeArea" id="q1T-os-jaT"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="UWK-hW-qK9" id="JRj-N4-1Jv"/>
                         <outlet property="emailText" destination="ZMX-oS-qsF" id="7Il-xZ-pLt"/>
                         <outlet property="errorMessageText" destination="nib-OK-1ww" id="xye-Io-t28"/>
                         <outlet property="firstNameText" destination="IGm-Oa-NQ5" id="bJ2-2E-C0F"/>

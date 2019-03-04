@@ -15,6 +15,8 @@
 		498F001B222CBA80003E7353 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F001A222CBA80003E7353 /* ToDoList.storyboard */; };
 		498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F001C222CBACF003E7353 /* ToDoListViewController.swift */; };
 		498F0020222CBF19003E7353 /* AuthenticateRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F001F222CBF19003E7353 /* AuthenticateRoute.swift */; };
+		498F0023222DD804003E7353 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0022222DD804003E7353 /* UIHelper.swift */; };
+		498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0024222DE1CA003E7353 /* SpinnerHelper.swift */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 		498F001A222CBA80003E7353 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
 		498F001C222CBACF003E7353 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		498F001F222CBF19003E7353 /* AuthenticateRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateRoute.swift; sourceTree = "<group>"; };
+		498F0022222DD804003E7353 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		498F0024222DE1CA003E7353 /* SpinnerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerHelper.swift; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		498F0021222DD7C9003E7353 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				498F0022222DD804003E7353 /* UIHelper.swift */,
+				498F0024222DE1CA003E7353 /* SpinnerHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		73DEF5C54D3CAD0EF6ABCCFB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		FB2088A522279C180026A15F /* The List */ = {
 			isa = PBXGroup;
 			children = (
+				498F0021222DD7C9003E7353 /* Helpers */,
 				498F001E222CBEA5003E7353 /* Router */,
 				498F0011222BA8C4003E7353 /* ViewModel */,
 				498F000E222BA889003E7353 /* Model */,
@@ -281,7 +295,9 @@
 				FB2088A922279C180026A15F /* ViewController.swift in Sources */,
 				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
 				498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */,
+				498F0023222DD804003E7353 /* UIHelper.swift in Sources */,
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
+				498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */,
 				498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */,
 				FB2088A722279C180026A15F /* AppDelegate.swift in Sources */,
 			);

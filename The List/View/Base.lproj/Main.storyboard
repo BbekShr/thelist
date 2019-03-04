@@ -105,6 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="0Kt-v7-xKe" id="Ot0-RI-xsS"/>
                         <outlet property="emailText" destination="Sdr-C5-RGw" id="q09-3n-eFP"/>
                         <outlet property="errorMessageText" destination="YAb-h2-aAw" id="Hyc-xo-Msb"/>
                         <outlet property="passwordText" destination="Yeg-7S-EaQ" id="nEY-GG-kj6"/>
