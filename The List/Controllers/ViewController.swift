@@ -13,26 +13,42 @@ class ViewController: UIViewController {
 
     var userAuthenticate: UserAuthenticateViewModel?
     
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var errorMessageText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         userAuthenticate = UserAuthenticateViewModel()
-        userAuthenticate?.login(classReference: self, email: "bbek@gmail.com", password: "admin123")
     }
     
-    // Display Error when there is error in authentication
-    public func displayError(errorMsg: String){
-        print(errorMsg)
+    @IBAction func signInAction(_ sender: Any) {
+        let email: String = emailText.text!
+        let password: String = passwordText.text!
+        
+        userAuthenticate?.login(classReference: self, email: email, password: password)
+    }
+    
+    @IBAction func createAccountAction(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "SignUp", bundle: nil) // Storyboard Reference
+        let signUpController = storyBoard.instantiateViewController(withIdentifier: "SignUpId") as! SignUpViewController
+        self.present(signUpController, animated: true, completion: nil)
     }
 
-    // Call back when User Signup Success
-    public func userSignupSuccess(userModel: User){
-        print(userModel.lastName)
+}
+
+// Call Back Functions for View Model
+extension ViewController {
+    // Display Error when there is error in authentication
+    public func displayError(errorMsg: String){
+        errorMessageText.text = errorMsg // Set error message in the screen
+        emailText.text = "" // Clear Email Text
+        passwordText.text = "" // Clear Password Text
     }
     
     public func userSigninSuccess(userModel: User){
-        print(userModel.userId)
+        errorMessageText.text = "" // Clear the error message
     }
-
 }
 
