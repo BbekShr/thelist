@@ -18,6 +18,7 @@ class ToDoListViewController: UIViewController {
         showNavigationBar()
         // Do any additional setup after loading the view.
     }
+ 
 }
 
 extension ToDoListViewController{
@@ -25,4 +26,15 @@ extension ToDoListViewController{
         var controller = route.routeToAddItem()
         self.navigationController?.present(controller, animated: true, completion: nil)
     }
+    
+    @IBAction func completedListAction(_ sender: Any) {
+        var controller = route.routeToCompletedItem()
+        self.navigationController?.present(controller, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
 }

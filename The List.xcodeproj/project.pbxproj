@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425A16A2222EF5A500884ABB /* CompletedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425A16A1222EF5A500884ABB /* CompletedList.storyboard */; };
+		425A16A4222EF5F400884ABB /* CompletedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A16A3222EF5F400884ABB /* CompletedListViewController.swift */; };
+		425A16A6222EF8A900884ABB /* Catagories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425A16A5222EF8A900884ABB /* Catagories.storyboard */; };
+		425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */; };
+		425A16AA222EFD9600884ABB /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425A16A9222EFD9600884ABB /* Friends.storyboard */; };
+		425A16AC222EFDB100884ABB /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A16AB222EFDB100884ABB /* FriendsViewController.swift */; };
 		498F0010222BA8BA003E7353 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F000F222BA8BA003E7353 /* UserModel.swift */; };
 		498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */; };
 		498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */; };
@@ -31,6 +37,12 @@
 /* Begin PBXFileReference section */
 		259FD0748DA866BBC52E2943 /* Pods-The List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.debug.xcconfig"; sourceTree = "<group>"; };
 		3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		425A16A1222EF5A500884ABB /* CompletedList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompletedList.storyboard; sourceTree = "<group>"; };
+		425A16A3222EF5F400884ABB /* CompletedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedListViewController.swift; sourceTree = "<group>"; };
+		425A16A5222EF8A900884ABB /* Catagories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catagories.storyboard; sourceTree = "<group>"; };
+		425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesViewController.swift; sourceTree = "<group>"; };
+		425A16A9222EFD9600884ABB /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		425A16AB222EFDB100884ABB /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		498F000F222BA8BA003E7353 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceModel.swift; sourceTree = "<group>"; };
@@ -73,6 +85,9 @@
 				498F0018222CB2E6003E7353 /* SignUpViewController.swift */,
 				498F001C222CBACF003E7353 /* ToDoListViewController.swift */,
 				498F0028222E4118003E7353 /* AddItemViewController.swift */,
+				425A16A3222EF5F400884ABB /* CompletedListViewController.swift */,
+				425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */,
+				425A16AB222EFDB100884ABB /* FriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -85,6 +100,9 @@
 				498F0016222CB2CF003E7353 /* SignUp.storyboard */,
 				498F001A222CBA80003E7353 /* ToDoList.storyboard */,
 				498F0026222E3BB1003E7353 /* ItemAddScreen.storyboard */,
+				425A16A1222EF5A500884ABB /* CompletedList.storyboard */,
+				425A16A5222EF8A900884ABB /* Catagories.storyboard */,
+				425A16A9222EFD9600884ABB /* Friends.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,12 +253,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425A16A2222EF5A500884ABB /* CompletedList.storyboard in Resources */,
 				498F001B222CBA80003E7353 /* ToDoList.storyboard in Resources */,
 				FB2088B122279C1D0026A15F /* LaunchScreen.storyboard in Resources */,
 				FB2088D722288B520026A15F /* GoogleService-Info.plist in Resources */,
 				FB2088AE22279C1D0026A15F /* Assets.xcassets in Resources */,
 				FB2088AC22279C180026A15F /* Main.storyboard in Resources */,
+				425A16AA222EFD9600884ABB /* Friends.storyboard in Resources */,
 				498F0017222CB2CF003E7353 /* SignUp.storyboard in Resources */,
+				425A16A6222EF8A900884ABB /* Catagories.storyboard in Resources */,
 				498F0027222E3BB1003E7353 /* ItemAddScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425A16A4222EF5F400884ABB /* CompletedListViewController.swift in Sources */,
 				498F0020222CBF19003E7353 /* AuthenticateRoute.swift in Sources */,
 				498F0019222CB2E6003E7353 /* SignUpViewController.swift in Sources */,
 				FB2088A922279C180026A15F /* ViewController.swift in Sources */,
+				425A16AC222EFDB100884ABB /* FriendsViewController.swift in Sources */,
 				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
 				498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */,
 				498F0023222DD804003E7353 /* UIHelper.swift in Sources */,
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
 				498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */,
+				425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */,
 				498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */,
 				FB2088A722279C180026A15F /* AppDelegate.swift in Sources */,
 				498F0029222E4118003E7353 /* AddItemViewController.swift in Sources */,

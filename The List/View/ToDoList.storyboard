@@ -35,6 +35,9 @@
                     <navigationItem key="navigationItem" title="ToDo List" id="O59-R1-qcd">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="atf-iq-5ne">
                             <color key="tintColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="completedListAction:" destination="zNh-25-F8C" id="tPa-Ml-dZM"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" id="5F6-aD-hKV">
                             <color key="tintColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -23,6 +23,13 @@ class AuthenticateRoute {
         let controller = builderRoute(storyboardName: "ItemAddScreen", storyboardId: "AddItemId") as! AddItemViewController
         return controller
     }
+    
+    func routeToCompletedItem() -> UIViewController {
+        let controller = builderRoute(storyboardName: "CompletedList", storyboardId: "CompletedListId") as! CompletedListViewController
+        return controller
+    }
+    
+    
 }
 
 extension AuthenticateRoute{
