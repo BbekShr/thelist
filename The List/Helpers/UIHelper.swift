@@ -8,11 +8,22 @@
 
 import UIKit
 
-// Add a blurry effect to image
-func addBlurEffect(backgroundImage: UIImageView){
-    let darkBlur = UIBlurEffect(style: UIBlurEffect.Style.dark)
-    let blurView = UIVisualEffectView(effect: darkBlur)
-    blurView.frame = backgroundImage.bounds
-    backgroundImage.addSubview(blurView)
+extension UIViewController {
+    // Add a blurry effect to image
+    func addBlurEffect(backgroundImage: UIImageView){
+        let darkBlur = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        let imageFrame = backgroundImage.bounds // Background Image Frame
+        blurView.frame = CGRect(x: 0.0, y: 0.0, width: imageFrame.width, height: imageFrame.height + 100.0)
+        backgroundImage.addSubview(blurView)
+    }
+    
+    // Hide Navigation Bar
+    func hideNavigationBar(){
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func showNavigationBar(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
-

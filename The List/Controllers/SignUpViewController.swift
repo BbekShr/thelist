@@ -54,6 +54,6 @@ extension SignUpViewController{
     public func userSignupSuccess(userModel: User){
         removeSpinner()
         let controller = route.routeToMainScreen(userModel: userModel)
-        self.present(controller, animated: true, completion: nil)
+        present(controller, animated: true, completion: nil)
     }
 }

@@ -22,7 +22,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         addBlurEffect(backgroundImage: backgroundImage) // Add Blur effect to the background
+        hideNavigationBar()
         userAuthenticate = UserAuthenticateViewModel()
+        print("Signin intiated")
     }
     
     @IBAction func signInAction(_ sender: Any) {
@@ -54,7 +56,7 @@ extension ViewController {
     public func userSigninSuccess(userModel: User){
         removeSpinner() // Stop Loading Process
         errorMessageText.text = "" // Clear the error message
-        let controller = route.routeToMainScreen(userModel: userModel) // Router configuration completed and ready to route
-        self.present(controller, animated: true, completion: nil)
+        let controller = self.route.routeToMainScreen(userModel: userModel) // Router configuration completed and ready to route
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
