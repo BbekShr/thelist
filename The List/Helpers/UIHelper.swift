@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     // Add a blurry effect to image
     func addBlurEffect(backgroundImage: UIImageView){
         let darkBlur = UIBlurEffect(style: UIBlurEffect.Style.dark)
@@ -25,5 +26,13 @@ extension UIViewController {
     
     func showNavigationBar(){
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    // Add a Background Image to the view Screen
+    func addBackgroundImage(){
+        let imageView = UIImageView(image: UIImage(named: "loginBackground")) // Image View Holder
+        imageView.frame = view.bounds // Image Size
+        view.insertSubview(imageView, at: 0) // Insert at the lower stack of image
+        addBlurEffect(backgroundImage: imageView)
     }
 }

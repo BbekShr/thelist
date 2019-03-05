@@ -9,14 +9,20 @@
 import UIKit
 
 class ToDoListViewController: UIViewController {
-
-    @IBOutlet weak var imageBackground: UIImageView!
+    
+    private var route: AuthenticateRoute = AuthenticateRoute()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBlurEffect(backgroundImage: imageBackground)
+        addBackgroundImage() // Added Background Image
         showNavigationBar()
         // Do any additional setup after loading the view.
     }
+}
 
+extension ToDoListViewController{
+    @IBAction func addListAction(_ sender: Any) {
+        var controller = route.routeToAddItem()
+        self.navigationController?.present(controller, animated: true, completion: nil)
+    }
 }

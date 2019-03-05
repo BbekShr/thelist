@@ -15,8 +15,21 @@ class AuthenticateRoute {
     
     // Return ToDoListViewController to navigate to that controller
     func routeToMainScreen(userModel: User) -> UIViewController{
-        let storyBoard = UIStoryboard(name: "ToDoList", bundle: nil)
-        let todoListController = storyBoard.instantiateViewController(withIdentifier: "ToDoListId") as! ToDoListViewController
+        let controller = builderRoute(storyboardName: "ToDoList", storyboardId: "ToDoListId") as! ToDoListViewController
+        return controller
+    }
+    
+    func routeToAddItem() -> UIViewController {
+        let controller = builderRoute(storyboardName: "ItemAddScreen", storyboardId: "AddItemId") as! AddItemViewController
+        return controller
+    }
+}
+
+extension AuthenticateRoute{
+    // Build Route Functions
+    private func builderRoute(storyboardName: String, storyboardId: String) -> UIViewController {
+        let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
+        let todoListController = storyBoard.instantiateViewController(withIdentifier: storyboardId)
         return todoListController
     }
 }

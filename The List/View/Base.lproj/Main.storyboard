@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="0Kt-v7-xKe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-K7-gm4">
                                 <rect key="frame" x="124" y="247" width="166" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
@@ -76,7 +73,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yeg-7S-EaQ" firstAttribute="top" secondItem="Sdr-C5-RGw" secondAttribute="bottom" constant="29" id="2Dv-jw-PID"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Kt-v7-xKe" secondAttribute="trailing" id="40B-Ix-aLs"/>
                             <constraint firstItem="YAb-h2-aAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50y-Kb-eDe"/>
                             <constraint firstItem="Sdr-C5-RGw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="6Dh-ni-IfF"/>
                             <constraint firstItem="Yeg-7S-EaQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="8lq-8x-Bdq"/>
@@ -85,8 +81,6 @@
                             <constraint firstItem="YAb-h2-aAw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="52" id="BDY-NY-jGu"/>
                             <constraint firstItem="QnP-73-n55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="Bj5-ZH-KTt"/>
                             <constraint firstItem="zjJ-K7-gm4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="GEo-jq-cV6"/>
-                            <constraint firstItem="0Kt-v7-xKe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-88" id="HyN-Pk-WYX"/>
-                            <constraint firstItem="0Kt-v7-xKe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KYG-pg-cGf"/>
                             <constraint firstItem="Yeg-7S-EaQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KZk-7J-1oV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zjJ-K7-gm4" secondAttribute="trailing" constant="124" id="QIm-Qh-a5g"/>
                             <constraint firstItem="YAb-h2-aAw" firstAttribute="top" secondItem="zjJ-K7-gm4" secondAttribute="bottom" constant="14" id="Ysx-rx-fSO"/>
@@ -97,7 +91,6 @@
                             <constraint firstItem="Sdr-C5-RGw" firstAttribute="top" secondItem="zjJ-K7-gm4" secondAttribute="bottom" constant="80" id="lrl-xp-OeX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yeg-7S-EaQ" secondAttribute="trailing" constant="52" id="qMb-FA-rdh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QnP-73-n55" secondAttribute="trailing" constant="147" id="tdC-fZ-ljN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Kt-v7-xKe" secondAttribute="bottom" constant="-34" id="xG8-sG-2S7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdr-C5-RGw" secondAttribute="trailing" constant="52" id="xt9-kB-ztk"/>
                             <constraint firstAttribute="trailing" secondItem="YAb-h2-aAw" secondAttribute="trailing" constant="52" id="yJQ-x3-3GA"/>
                             <constraint firstItem="zjJ-K7-gm4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zcl-ij-TOZ"/>
@@ -106,7 +99,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="yOm-AI-4P0"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="0Kt-v7-xKe" id="Ot0-RI-xsS"/>
                         <outlet property="emailText" destination="Sdr-C5-RGw" id="q09-3n-eFP"/>
                         <outlet property="errorMessageText" destination="YAb-h2-aAw" id="Hyc-xo-Msb"/>
                         <outlet property="passwordText" destination="Yeg-7S-EaQ" id="nEY-GG-kj6"/>
@@ -124,6 +116,10 @@
                     <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HqL-Dz-Ada">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14014216217810274" green="0.13158243028492358" blue="0.15450480202127836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -135,7 +131,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="loginBackground" width="2002" height="3000"/>
-    </resources>
 </document>

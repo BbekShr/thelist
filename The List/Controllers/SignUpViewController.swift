@@ -15,7 +15,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageText: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
     
     private let route: AuthenticateRoute = AuthenticateRoute()
     
@@ -23,8 +22,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        addBlurEffect(backgroundImage: backgroundImage)
+        addBackgroundImage() // Background Image
+        hideNavigationBar()  // Hide Navigation Bar
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -54,6 +53,6 @@ extension SignUpViewController{
     public func userSignupSuccess(userModel: User){
         removeSpinner()
         let controller = route.routeToMainScreen(userModel: userModel)
-        present(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -16,12 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageText: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        addBlurEffect(backgroundImage: backgroundImage) // Add Blur effect to the background
+        addBackgroundImage()
         hideNavigationBar()
         userAuthenticate = UserAuthenticateViewModel()
         print("Signin intiated")
@@ -37,7 +36,7 @@ class ViewController: UIViewController {
     @IBAction func createAccountAction(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "SignUp", bundle: nil) // Storyboard Reference
         let signUpController = storyBoard.instantiateViewController(withIdentifier: "SignUpId") as! SignUpViewController
-        self.present(signUpController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(signUpController, animated: true)
     }
 
 }
