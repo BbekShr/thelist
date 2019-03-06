@@ -50,7 +50,7 @@ extension SignUpViewController{
     }
     
     // Process when Signup is successfull
-    public func userSignupSuccess(userModel: User){
+    public func userAuthenticateSuccess(userModel: User){
         removeSpinner()
         let controller = route.routeToMainScreen(userModel: userModel)
         self.navigationController?.pushViewController(controller, animated: true)

@@ -24,18 +24,17 @@ class ViewController: UIViewController {
         addBackgroundImage()
         hideNavigationBar()
         userAuthenticate = UserAuthenticateViewModel()
-        if Auth.auth().currentUser != nil {
-            print("Auth Code")
-            print(Auth.auth().currentUser?.email)
+        if userAuthenticate!.isUserLoggedin() { // Check if User Need to Signin or not
+            startSpinner(viewObject: view)
+            userAuthenticate!.signinUserAutomatic(classReference: self) // Signin user automatically
         }
-        print("Signin intiated")
     }
     
     @IBAction func signInAction(_ sender: Any) {
         let email: String = emailText.text!
         let password: String = passwordText.text!
         startSpinner(viewObject: view) // Start loading View
-        userAuthenticate?.login(classReference: self, email: email, password: password)
+        userAuthenticate!.login(classReference: self, email: email, password: password)
     }
     
     @IBAction func createAccountAction(_ sender: Any) {
@@ -57,7 +56,7 @@ extension ViewController {
     }
     
     // Process when Signin is successfull
-    public func userSigninSuccess(userModel: User){
+    public func userAuthenticateSuccess(userModel: User){
         removeSpinner() // Stop Loading Process
         errorMessageText.text = "" // Clear the error message
         let controller = self.route.routeToMainScreen(userModel: userModel) // Router configuration completed and ready to route
