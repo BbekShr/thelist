@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,10 @@ class ViewController: UIViewController {
         addBackgroundImage()
         hideNavigationBar()
         userAuthenticate = UserAuthenticateViewModel()
+        if Auth.auth().currentUser != nil {
+            print("Auth Code")
+            print(Auth.auth().currentUser?.email)
+        }
         print("Signin intiated")
     }
     

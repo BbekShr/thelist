@@ -29,7 +29,7 @@ extension ToDoListViewController{
     
     @IBAction func completedListAction(_ sender: Any) {
         var controller = route.routeToCompletedItem()
-        self.navigationController?.present(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     
