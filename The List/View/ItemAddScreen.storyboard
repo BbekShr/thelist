@@ -17,7 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="DZN-wz-Nkl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40W-Oy-71L">
+                                <rect key="frame" x="24" y="244" width="366" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTZ-g5-31n">
+                                <rect key="frame" x="24" y="298" width="366" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-fx-yho">
+                                <rect key="frame" x="24" y="352" width="366" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="40W-Oy-71L" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="BSY-6T-s2t"/>
+                            <constraint firstItem="AWE-fx-yho" firstAttribute="top" secondItem="qTZ-g5-31n" secondAttribute="bottom" constant="24" id="DmP-RR-AtV"/>
+                            <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="40W-Oy-71L" secondAttribute="trailing" constant="24" id="JuV-kh-9La"/>
+                            <constraint firstItem="qTZ-g5-31n" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="QZP-tS-9RY"/>
+                            <constraint firstItem="40W-Oy-71L" firstAttribute="top" secondItem="bSD-Vp-oCc" secondAttribute="top" constant="200" id="XLM-X8-gIO"/>
+                            <constraint firstItem="40W-Oy-71L" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="dkr-4a-rnd"/>
+                            <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="qTZ-g5-31n" secondAttribute="trailing" constant="24" id="i0t-dN-pdB"/>
+                            <constraint firstItem="AWE-fx-yho" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="k4p-gk-Dss"/>
+                            <constraint firstItem="qTZ-g5-31n" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="nPA-ZN-9BB"/>
+                            <constraint firstItem="qTZ-g5-31n" firstAttribute="top" secondItem="40W-Oy-71L" secondAttribute="bottom" constant="30" id="njz-1L-Vts"/>
+                            <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="AWE-fx-yho" secondAttribute="trailing" constant="24" id="vjX-fW-wko"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bSD-Vp-oCc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="kcS-Jc-iAm"/>
