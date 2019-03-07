@@ -28,6 +28,8 @@
 		49BFFF9E22308C5000068FC6 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */; };
 		49BFFFA02231840A00068FC6 /* ItemAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFF9F2231840A00068FC6 /* ItemAddViewModel.swift */; };
 		49BFFFA22231858600068FC6 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA12231858600068FC6 /* ItemModel.swift */; };
+		49BFFFA422319CF800068FC6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA322319CF800068FC6 /* Service.swift */; };
+		49BFFFA62231A95700068FC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA52231A95700068FC6 /* StringExtension.swift */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -61,6 +63,8 @@
 		49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BFFF9F2231840A00068FC6 /* ItemAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewModel.swift; sourceTree = "<group>"; };
 		49BFFFA12231858600068FC6 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		49BFFFA322319CF800068FC6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		49BFFFA52231A95700068FC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				498F0022222DD804003E7353 /* ExtensionUIViewController.swift */,
 				498F0024222DE1CA003E7353 /* SpinnerHelper.swift */,
+				49BFFFA52231A95700068FC6 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				FB2088AD22279C1D0026A15F /* Assets.xcassets */,
 				FB2088B222279C1D0026A15F /* Info.plist */,
 				FB2088D622288B520026A15F /* GoogleService-Info.plist */,
+				49BFFFA322319CF800068FC6 /* Service.swift */,
 			);
 			path = "The List";
 			sourceTree = "<group>";
@@ -341,8 +347,10 @@
 				498F0023222DD804003E7353 /* ExtensionUIViewController.swift in Sources */,
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
 				49BFFFA22231858600068FC6 /* ItemModel.swift in Sources */,
+				49BFFFA422319CF800068FC6 /* Service.swift in Sources */,
 				498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */,
 				425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */,
+				49BFFFA62231A95700068FC6 /* StringExtension.swift in Sources */,
 				498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */,
 				FB2088A722279C180026A15F /* AppDelegate.swift in Sources */,
 				498F0029222E4118003E7353 /* AddItemViewController.swift in Sources */,

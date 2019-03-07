@@ -14,7 +14,7 @@ class AuthenticateRoute {
     }
     
     // Return ToDoListViewController to navigate to that controller
-    func routeToMainScreen(userModel: User) -> UIViewController{
+    func routeToMainScreen() -> UIViewController{
         let controller = builderRoute(storyboardName: "ToDoList", storyboardId: "ToDoListId") as! ToDoListViewController
         return controller
     }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 
 class ViewController: UIViewController {
@@ -57,10 +56,10 @@ extension ViewController {
     }
     
     // Process when Signin is successfull
-    public func userAuthenticateSuccess(userModel: User){
+    public func userAuthenticateSuccess(){
         removeSpinner() // Stop Loading Process
         errorMessageText.text = "" // Clear the error message
-        let controller = self.route.routeToMainScreen(userModel: userModel) // Router configuration completed and ready to route
+        let controller = self.route.routeToMainScreen() // Router configuration completed and ready to route
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

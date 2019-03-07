@@ -45,7 +45,8 @@ extension UserAuthenticateViewModel {
             if let authObj = authData { // The signup successfully Completed
                 self.setupUserModel(id: authObj.user.uid, email: email, firstName: firstname, lastName: lastname)
                 self.createUserEntry() // Creates the User profile in the database
-                classRefernce.userAuthenticateSuccess(userModel: self.userModel) // Call the callback function after success
+                service.userModel = self.userModel // Set to the service
+                classRefernce.userAuthenticateSuccess() // Call the callback function after success
             }
         }
     }
@@ -104,7 +105,8 @@ extension UserAuthenticateViewModel {
             let firstName = value?["FirstName"] as? String ?? ""
             let lastName = value?["LastName"] as? String ?? ""
             self.setupUserModel(id: userId, email: userEmail, firstName: firstName, lastName: lastName) // Setup the user Model
-            classReference.userAuthenticateSuccess(userModel: self.userModel) // Call Back Function in View Controller
+            service.userModel = self.userModel // Set to the service
+            classReference.userAuthenticateSuccess() // Call Back Function in View Controller
         }
     }
     
