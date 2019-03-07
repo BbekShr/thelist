@@ -25,6 +25,7 @@
 		498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0024222DE1CA003E7353 /* SpinnerHelper.swift */; };
 		498F0027222E3BB1003E7353 /* ItemAddScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F0026222E3BB1003E7353 /* ItemAddScreen.storyboard */; };
 		498F0029222E4118003E7353 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0028222E4118003E7353 /* AddItemViewController.swift */; };
+		49BFFF9E22308C5000068FC6 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		498F0024222DE1CA003E7353 /* SpinnerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerHelper.swift; sourceTree = "<group>"; };
 		498F0026222E3BB1003E7353 /* ItemAddScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemAddScreen.storyboard; sourceTree = "<group>"; };
 		498F0028222E4118003E7353 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BFFF9E22308C5000068FC6 /* iOSDropDown.framework in Frameworks */,
 				D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 		EE9518327BFAD79CB14BB1F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */,
 				3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */,
 			);
 			name = Frameworks;
@@ -278,6 +282,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-The List/Pods-The List-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -285,6 +290,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
