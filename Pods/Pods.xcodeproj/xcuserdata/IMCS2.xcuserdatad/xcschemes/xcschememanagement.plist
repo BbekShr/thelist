@@ -59,6 +59,11 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>iOSDropDown.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
