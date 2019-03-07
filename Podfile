@@ -9,4 +9,5 @@ target 'The List' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'iOSDropDown'
 end

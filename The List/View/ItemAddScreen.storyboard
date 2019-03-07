@@ -19,45 +19,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40W-Oy-71L">
-                                <rect key="frame" x="24" y="244" width="366" height="24"/>
+                                <rect key="frame" x="24" y="224" width="366" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTZ-g5-31n">
-                                <rect key="frame" x="24" y="298" width="366" height="30"/>
+                                <rect key="frame" x="24" y="278" width="366" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-fx-yho">
-                                <rect key="frame" x="24" y="352" width="366" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rS-fN-uTj">
+                                <rect key="frame" x="83" y="444" width="248" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kek-tG-4n9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assign to a Friend" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Tb-scj" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="24" y="386" width="366" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-fx-yho" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="24" y="332" width="366" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-V6-whc">
+                                <rect key="frame" x="182" y="805" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="r85-5U-asX"/>
+                                    <constraint firstAttribute="height" constant="50" id="ujo-Wy-Vln"/>
+                                </constraints>
+                                <state key="normal" image="delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelAction:" destination="SHu-DN-nBq" eventType="touchUpInside" id="NOD-kH-EGi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bSD-Vp-oCc" firstAttribute="bottom" secondItem="iyE-V6-whc" secondAttribute="bottom" constant="7" id="17A-mX-lIK"/>
+                            <constraint firstItem="1rS-fN-uTj" firstAttribute="top" secondItem="eN1-Tb-scj" secondAttribute="bottom" constant="28" id="3jB-gK-TVv"/>
                             <constraint firstItem="40W-Oy-71L" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="BSY-6T-s2t"/>
                             <constraint firstItem="AWE-fx-yho" firstAttribute="top" secondItem="qTZ-g5-31n" secondAttribute="bottom" constant="24" id="DmP-RR-AtV"/>
                             <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="40W-Oy-71L" secondAttribute="trailing" constant="24" id="JuV-kh-9La"/>
+                            <constraint firstItem="eN1-Tb-scj" firstAttribute="top" secondItem="AWE-fx-yho" secondAttribute="bottom" constant="24" id="MwW-pG-egu"/>
                             <constraint firstItem="qTZ-g5-31n" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="QZP-tS-9RY"/>
-                            <constraint firstItem="40W-Oy-71L" firstAttribute="top" secondItem="bSD-Vp-oCc" secondAttribute="top" constant="200" id="XLM-X8-gIO"/>
+                            <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="eN1-Tb-scj" secondAttribute="trailing" constant="24" id="RB5-56-ME0"/>
+                            <constraint firstItem="40W-Oy-71L" firstAttribute="top" secondItem="bSD-Vp-oCc" secondAttribute="top" constant="180" id="XLM-X8-gIO"/>
+                            <constraint firstItem="iyE-V6-whc" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="Y6I-hK-aJ5"/>
+                            <constraint firstItem="eN1-Tb-scj" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="cgO-Hn-nHz"/>
                             <constraint firstItem="40W-Oy-71L" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="dkr-4a-rnd"/>
                             <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="qTZ-g5-31n" secondAttribute="trailing" constant="24" id="i0t-dN-pdB"/>
                             <constraint firstItem="AWE-fx-yho" firstAttribute="leading" secondItem="bSD-Vp-oCc" secondAttribute="leading" constant="24" id="k4p-gk-Dss"/>
+                            <constraint firstItem="1rS-fN-uTj" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="mZ8-oJ-rjn"/>
                             <constraint firstItem="qTZ-g5-31n" firstAttribute="centerX" secondItem="DZN-wz-Nkl" secondAttribute="centerX" id="nPA-ZN-9BB"/>
                             <constraint firstItem="qTZ-g5-31n" firstAttribute="top" secondItem="40W-Oy-71L" secondAttribute="bottom" constant="30" id="njz-1L-Vts"/>
+                            <constraint firstItem="1rS-fN-uTj" firstAttribute="width" secondItem="DZN-wz-Nkl" secondAttribute="width" multiplier="0.6" id="tzq-lN-eg2"/>
                             <constraint firstItem="bSD-Vp-oCc" firstAttribute="trailing" secondItem="AWE-fx-yho" secondAttribute="trailing" constant="24" id="vjX-fW-wko"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bSD-Vp-oCc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="kcS-Jc-iAm"/>
+                    <connections>
+                        <outlet property="categoryDropDown" destination="AWE-fx-yho" id="0I8-Xf-bVT"/>
+                        <outlet property="friendDropDown" destination="eN1-Tb-scj" id="ReN-AA-ssk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBG-4q-PzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884.05797101449286" y="219.64285714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="delete" width="96" height="96"/>
+    </resources>
 </document>
