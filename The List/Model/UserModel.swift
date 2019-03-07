@@ -11,6 +11,8 @@ struct User {
     var userId: String
     var firstName: String
     var lastName: String
+    var categoryList: [String]
+    var friendList: [String]
     
     // Empty Intialization
     init(){
@@ -18,6 +20,8 @@ struct User {
         userId = ""
         firstName = ""
         lastName = ""
+        categoryList = []
+        friendList = []
     }
     
     // Intialization for User Signup

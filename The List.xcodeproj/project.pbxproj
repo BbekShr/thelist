@@ -26,6 +26,8 @@
 		498F0027222E3BB1003E7353 /* ItemAddScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F0026222E3BB1003E7353 /* ItemAddScreen.storyboard */; };
 		498F0029222E4118003E7353 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0028222E4118003E7353 /* AddItemViewController.swift */; };
 		49BFFF9E22308C5000068FC6 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */; };
+		49BFFFA02231840A00068FC6 /* ItemAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFF9F2231840A00068FC6 /* ItemAddViewModel.swift */; };
+		49BFFFA22231858600068FC6 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA12231858600068FC6 /* ItemModel.swift */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 		498F0026222E3BB1003E7353 /* ItemAddScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemAddScreen.storyboard; sourceTree = "<group>"; };
 		498F0028222E4118003E7353 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		49BFFF9D22308C5000068FC6 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BFFF9F2231840A00068FC6 /* ItemAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewModel.swift; sourceTree = "<group>"; };
+		49BFFFA12231858600068FC6 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				498F000F222BA8BA003E7353 /* UserModel.swift */,
 				498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */,
+				49BFFFA12231858600068FC6 /* ItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */,
+				49BFFF9F2231840A00068FC6 /* ItemAddViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,8 +337,10 @@
 				425A16AC222EFDB100884ABB /* FriendsViewController.swift in Sources */,
 				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
 				498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */,
+				49BFFFA02231840A00068FC6 /* ItemAddViewModel.swift in Sources */,
 				498F0023222DD804003E7353 /* ExtensionUIViewController.swift in Sources */,
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
+				49BFFFA22231858600068FC6 /* ItemModel.swift in Sources */,
 				498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */,
 				425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */,
 				498F001D222CBACF003E7353 /* ToDoListViewController.swift in Sources */,

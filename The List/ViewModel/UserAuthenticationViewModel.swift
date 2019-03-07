@@ -56,7 +56,9 @@ extension UserAuthenticateViewModel {
         userNode.setValue([
             "FirstName": userModel.firstName,
             "LastName" : userModel.lastName,
-            "Active" : true
+            "Active" : true,
+            "CategoryList": [],
+            "FriendList": []
             ]) // Create the json tree for account creation
     }
     

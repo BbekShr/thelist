@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class ViewController: UIViewController {
 
     var userAuthenticate: UserAuthenticateViewModel?
