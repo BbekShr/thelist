@@ -24,11 +24,11 @@ class ViewController: UIViewController {
         addBackgroundImage()
         hideNavigationBar()
         userAuthenticate = UserAuthenticateViewModel()
-//        if userAuthenticate!.isUserLoggedin() { // Check if User Need to Signin or not
-//            print("How Come over here")
-//            startSpinner(viewObject: view)
-//            userAuthenticate!.signinUserAutomatic(classReference: self) // Signin user automatically
-//        }
+        if userAuthenticate!.isUserLoggedin() { // Check if User Need to Signin or not
+            print("How Come over here")
+            startSpinner(viewObject: view)
+            userAuthenticate!.signinUserAutomatic(classReference: self) // Signin user automatically
+        }
     }
     
     @IBAction func signInAction(_ sender: Any) {

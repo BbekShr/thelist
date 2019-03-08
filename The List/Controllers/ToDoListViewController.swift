@@ -16,6 +16,7 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         addBackgroundImage() // Added Background Image
         showNavigationBar()
+        
         // Do any additional setup after loading the view.
     }
  

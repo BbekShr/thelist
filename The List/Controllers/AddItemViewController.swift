@@ -11,6 +11,7 @@ import iOSDropDown
 
 class AddItemViewController: UIViewController {
 
+    @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var categoryDropDown: DropDown!
     @IBOutlet weak var friendDropDown: DropDown!
     
@@ -19,42 +20,44 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
-        renderCategoryDropDown()
-        renderFriendDropDown()
-        itemAddViewModel.addItem(item: "This is a new Task", category: "Shopping", friendEmail: "jaja@gmail.com", successHandler: {
-            print("All Added")
-        }, errorHandler: {(errorMsg) in
-            print(errorMsg)
-        })
-        // Do any additional setup after loading the view.
+        itemAddViewModel.getCategoryList(userId: service.userModel.userId) { (categoryArray) in
+            self.renderDropDown(dropDownRef: self.categoryDropDown, valueArray: categoryArray)
+        }
+        itemAddViewModel.getFriendEmailList(userId: service.userModel.userId) { (friendEmailArray) in
+            self.renderDropDown(dropDownRef: self.friendDropDown, valueArray: friendEmailArray)
+        }
     }
+    
+    @IBAction func addItemAction(_ sender: Any) {
+        itemAddViewModel.addItem(item: itemName.text!, category: categoryDropDown.text!, friendEmail: friendDropDown.text!, successHandler: {
+            self.itemAddSuccess()
+        }, errorHandler: {(errorMessage) in
+            self.displayError(errorMessage: errorMessage)
+        })
+    }
+    
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-}
-
-extension AddItemViewController{
     
 }
 
+// Call Back Functions
 extension AddItemViewController{
-    private func renderCategoryDropDown(){
-        categoryDropDown.optionArray = ["Milk", "Product", "Shopping", "Permanent Access"]
-        categoryDropDown.optionIds = [5,6,7,8]
-        categoryDropDown.didSelect { (selectText, index, id) in
-            print(selectText)
-            print(index)
-            print(id)
-        }
+    private func itemAddSuccess(){
+        self.dismiss(animated: true, completion: nil)
     }
     
-    private func renderFriendDropDown(){
-        friendDropDown.optionArray = ["Amazing", "Product", "Gallery", "Permanent Access"]
-        friendDropDown.optionIds = [5,6,7,8]
-        friendDropDown.didSelect { (selectText, index, id) in
-            print(selectText)
-            print(index)
-            print(id)
-        }
+    private func displayError(errorMessage: String){
+        let alert = service.getErrorAlertHandler(errorMessage: errorMessage, buttonString: "Continue")
+        self.present(alert, animated: true)
+    }
+}
+
+extension AddItemViewController{
+    
+    // Render Drop Down Category
+    private func renderDropDown(dropDownRef: DropDown, valueArray: [String]){
+        dropDownRef.optionArray = valueArray
     }
 }

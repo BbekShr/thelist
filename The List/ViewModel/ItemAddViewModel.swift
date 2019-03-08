@@ -94,6 +94,41 @@ extension ItemAddViewModel {
 
 // Extension for Friend ID
 extension ItemAddViewModel {
+    
+    public func getFriendEmailList(userId: String, completionHandler: @escaping (_ friendEmailArray: [String]) -> Void){
+        self.getFriendIdList(userId: userId) { (friendIdArray) in
+            var friendEmailArray: [String] = []
+            if !friendIdArray.isEmpty { // Only Call if friendIdArray is not Empty
+                self.databaseRef.ref.child("Users").observeSingleEvent(of: .value, with: { (allUserSnapshot) in
+                    for userValue in allUserSnapshot.children {
+                        let userSnap = userValue as! DataSnapshot
+                        if friendIdArray.contains(userSnap.key) { // Get email from Friend ID
+                            let userDictonary = userSnap.value as! NSDictionary
+                            let friendEmail = userDictonary.value(forKey: "Email") as! String
+                            friendEmailArray.append(friendEmail) // List of Friend Email
+                            if friendEmailArray.count == friendIdArray.count { // Used for Optimization
+                                break
+                            }
+                        }
+                    }
+                    completionHandler(friendEmailArray) // Code To Call when we finalize the friend Email Array
+                })
+            }else {
+                completionHandler(friendEmailArray) // Code to call when we get the email Array
+            }
+        }
+    }
+    
+    public func getFriendIdList(userId: String, completionHandler: @escaping (_ friendIdArray: [String]) -> Void){
+        self.databaseRef.ref.child("Users").child(userId).child("FriendList").observeSingleEvent(of: .value) { (dataSnapshot) in
+            var friendArray: [String] = []
+            if dataSnapshot.exists() {
+                friendArray = (dataSnapshot.value as! NSArray) as! [String]
+            }
+            completionHandler(friendArray) // Code to Run when got all the list
+        }
+    }
+    
     // Check if Friend email is ready to use or not.
     // Completion Handler if we get the friend ID
     private func checkFriendId(friendEmail: String, completionHandler: @escaping (_ friendId: String) -> Void, notFoundHandler: @escaping (_ error: String) -> Void){
@@ -145,6 +180,17 @@ extension ItemAddViewModel {
 
 // Extension For Category
 extension ItemAddViewModel {
+    
+    public func getCategoryList(userId: String, completionHandler: @escaping (_ categoryArray: [String]) -> Void){
+        self.databaseRef.ref.child("Users").child(userId).child("CategoryList").observeSingleEvent(of: .value) { (dataSnapshot) in
+            var categoryArray: [String] = []
+            if dataSnapshot.exists() {
+                categoryArray = (dataSnapshot.value as! NSArray) as! [String]
+            }
+            completionHandler(categoryArray)
+        }
+    }
+    
     // Ready Category for use
     // Completion Handler after we set the Category with the firebase
     private func readyCategoryForUse(userId: String, category: String, completionHander: @escaping () -> Void){

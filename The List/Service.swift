@@ -37,6 +37,12 @@ extension Service {
         let formattedDate = format.string(from: date)
         return formattedDate
     }
+    
+    func getErrorAlertHandler(errorMessage: String, buttonString: String) -> UIAlertController {
+        let alert = UIAlertController(title: "Something Went Wrong!", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonString, style: .destructive, handler: nil))
+        return alert
+    }
 }
 
 // All Private function Go Here
