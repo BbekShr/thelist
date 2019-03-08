@@ -12,7 +12,7 @@ struct ItemModel {
     var item: String
     var category: String
     var ownerId: String
-    var friendId: [String]
+    var friendId: String
     var isCompleted: Bool
     var dateAdded: String
     var dateReIssued: String
@@ -22,14 +22,14 @@ struct ItemModel {
         item = ""
         category = ""
         ownerId = ""
-        friendId = []
+        friendId = ""
         isCompleted = false
         dateAdded = ""
         dateReIssued = ""
         dateCompleted = ""
     }
     
-    init(item: String, category: String, ownerId: String, friendId: [String], isCompleted: Bool, dateAdded: String, dateReIssued: String, dateCompleted: String){
+    init(item: String, category: String, ownerId: String, friendId: String, isCompleted: Bool, dateAdded: String, dateReIssued: String, dateCompleted: String){
         self.init()
         self.item = item
         self.category = category

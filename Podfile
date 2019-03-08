@@ -10,4 +10,5 @@ target 'The List' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'iOSDropDown'
+  pod 'SwiftHash'
 end

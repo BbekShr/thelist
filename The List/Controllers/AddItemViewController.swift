@@ -14,11 +14,18 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var categoryDropDown: DropDown!
     @IBOutlet weak var friendDropDown: DropDown!
     
+    private var itemAddViewModel: ItemAddViewModel = ItemAddViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
         renderCategoryDropDown()
         renderFriendDropDown()
+        itemAddViewModel.addItem(item: "This is a new Task", category: "Shopping", friendEmail: "jaja@gmail.com", successHandler: {
+            print("All Added")
+        }, errorHandler: {(errorMsg) in
+            print(errorMsg)
+        })
         // Do any additional setup after loading the view.
     }
     @IBAction func cancelAction(_ sender: Any) {

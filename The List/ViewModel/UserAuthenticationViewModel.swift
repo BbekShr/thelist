@@ -57,6 +57,8 @@ extension UserAuthenticateViewModel {
         userNode.setValue([
             "FirstName": userModel.firstName,
             "LastName" : userModel.lastName,
+            "Email" : userModel.userEmail,
+            "UserId" : userModel.userId,
             "Active" : true,
             "CategoryList": [],
             "FriendList": []
@@ -99,15 +101,18 @@ extension UserAuthenticateViewModel {
     
     // Complete process for authenticated User. Handles the callback function
     private func redirectAuthenticateUser(userId: String, classReference: ViewController, userEmail: String){
-        self.userModel.userId = userId // Get User ID from firebase
-        self.userNode.child(self.userModel.userId).observeSingleEvent(of: .value) { (dataSnapshot) in // Retrieve User Data From Database
-            let value = dataSnapshot.value as? NSDictionary
-            let firstName = value?["FirstName"] as? String ?? ""
-            let lastName = value?["LastName"] as? String ?? ""
-            self.setupUserModel(id: userId, email: userEmail, firstName: firstName, lastName: lastName) // Setup the user Model
-            service.userModel = self.userModel // Set to the service
-            classReference.userAuthenticateSuccess() // Call Back Function in View Controller
-        }
+        self.userNode.observeSingleEvent(of: .value, with: { (allUserSnapShot) in
+            if allUserSnapShot.hasChild(userId) { // UserId is present here
+                self.userNode.child(userId).observeSingleEvent(of: .value) { (dataSnapshot) in // Retrieve User Data From Database
+                    let value = dataSnapshot.value as? NSDictionary
+                    let firstName = value?["FirstName"] as? String ?? ""
+                    let lastName = value?["LastName"] as? String ?? ""
+                    self.setupUserModel(id: userId, email: userEmail, firstName: firstName, lastName: lastName) // Setup the user Model
+                    service.userModel = self.userModel // Set to the service
+                    classReference.userAuthenticateSuccess() // Call Back Function in View Controller
+                }
+            } else {classReference.displayError(errorMsg: "")}
+        })
     }
     
 }

@@ -13,20 +13,30 @@
 ////////////////////////////////////////
 
 import Foundation
+import Firebase
 
 class Service {
     
     public var userModel: User
+    public var taskArray: [ItemModel]
     
     init(){
         userModel = User()
+        taskArray = []
     }
     
 }
 
 // All Public function Go Here
 extension Service {
-    
+    // Get Today Date
+    func getTodayDate() -> String{
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = format.string(from: date)
+        return formattedDate
+    }
 }
 
 // All Private function Go Here
