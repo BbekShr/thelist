@@ -31,6 +31,8 @@
 		49BFFFA422319CF800068FC6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA322319CF800068FC6 /* Service.swift */; };
 		49BFFFA62231A95700068FC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFFFA52231A95700068FC6 /* StringExtension.swift */; };
 		49DEC2E122338FE600C2CD78 /* ItemShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC2E022338FE600C2CD78 /* ItemShowViewModel.swift */; };
+		49DEC2E52233A59400C2CD78 /* ItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC2E32233A59400C2CD78 /* ItemCellTableViewCell.swift */; };
+		49DEC2E62233A59400C2CD78 /* ItemCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC2E42233A59400C2CD78 /* ItemCellTableViewCell.xib */; };
 		D72EB59D3D79E8F81AE057C6 /* Pods_The_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70FFB62BC4AF409FCDE9EF /* Pods_The_List.framework */; };
 		FB2088A722279C180026A15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A622279C180026A15F /* AppDelegate.swift */; };
 		FB2088A922279C180026A15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2088A822279C180026A15F /* ViewController.swift */; };
@@ -67,6 +69,8 @@
 		49BFFFA322319CF800068FC6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		49BFFFA52231A95700068FC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		49DEC2E022338FE600C2CD78 /* ItemShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShowViewModel.swift; sourceTree = "<group>"; };
+		49DEC2E32233A59400C2CD78 /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		49DEC2E42233A59400C2CD78 /* ItemCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellTableViewCell.xib; sourceTree = "<group>"; };
 		C8A4105D947A260239A4B6CE /* Pods-The List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The List.release.xcconfig"; path = "Pods/Target Support Files/Pods-The List/Pods-The List.release.xcconfig"; sourceTree = "<group>"; };
 		FB2088A322279C180026A15F /* The List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2088A622279C180026A15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		498F000D222BA867003E7353 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49DEC2E22233A51200C2CD78 /* Cells */,
 				FB2088AA22279C180026A15F /* Main.storyboard */,
 				FB2088AF22279C1D0026A15F /* LaunchScreen.storyboard */,
 				498F0016222CB2CF003E7353 /* SignUp.storyboard */,
@@ -156,6 +161,15 @@
 				49BFFFA52231A95700068FC6 /* StringExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49DEC2E22233A51200C2CD78 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				49DEC2E32233A59400C2CD78 /* ItemCellTableViewCell.swift */,
+				49DEC2E42233A59400C2CD78 /* ItemCellTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		73DEF5C54D3CAD0EF6ABCCFB /* Pods */ = {
@@ -277,6 +291,7 @@
 				FB2088B122279C1D0026A15F /* LaunchScreen.storyboard in Resources */,
 				FB2088D722288B520026A15F /* GoogleService-Info.plist in Resources */,
 				FB2088AE22279C1D0026A15F /* Assets.xcassets in Resources */,
+				49DEC2E62233A59400C2CD78 /* ItemCellTableViewCell.xib in Resources */,
 				FB2088AC22279C180026A15F /* Main.storyboard in Resources */,
 				425A16AA222EFD9600884ABB /* Friends.storyboard in Resources */,
 				498F0017222CB2CF003E7353 /* SignUp.storyboard in Resources */,
@@ -353,6 +368,7 @@
 				498F0010222BA8BA003E7353 /* UserModel.swift in Sources */,
 				49BFFFA22231858600068FC6 /* ItemModel.swift in Sources */,
 				49BFFFA422319CF800068FC6 /* Service.swift in Sources */,
+				49DEC2E52233A59400C2CD78 /* ItemCellTableViewCell.swift in Sources */,
 				49DEC2E122338FE600C2CD78 /* ItemShowViewModel.swift in Sources */,
 				498F0025222DE1CA003E7353 /* SpinnerHelper.swift in Sources */,
 				425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */,

@@ -20,6 +20,8 @@ class ToDoListViewController: UIViewController {
         addBackgroundImage() // Added Background Image
         showNavigationBar()
         NotificationCenter.default.addObserver(self, selector: #selector(ToDoListViewController.handleAddItemDismiss), name: NSNotification.Name(rawValue: "addItemIsDismissed"), object: nil)
+        let nibName = UINib(nibName: "ItemCellTableViewCell", bundle: nil)
+        todoItemTable.register(nibName, forCellReuseIdentifier: "itemCellId")
         itemShowViewModel.getAllItemFromServer(userId: service.userModel.userId, completionHandler: {() in // Service TaskArray and CompletedTaskArray has been updated
             self.todoItemTable.reloadData()
         })
@@ -34,17 +36,19 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todoItem", for: indexPath as IndexPath)
-        cell.textLabel?.text = service.taskArray[indexPath.row].item
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCellId", for: indexPath as IndexPath) as! ItemCellTableViewCell
+        cell.commonInit(itemModel: service.taskArray[indexPath.row])
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 142
+    }
 }
 
 extension ToDoListViewController {
     
-    @objc func handleAddItemDismiss(){
+    @objc func handleAddItemDismiss() {
         todoItemTable.reloadData()
     }
     
