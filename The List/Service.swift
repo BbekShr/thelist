@@ -19,10 +19,12 @@ class Service {
     
     public var userModel: User
     public var taskArray: [ItemModel]
+    public var completedTaskArray: [ItemModel]
     
     init(){
         userModel = User()
         taskArray = []
+        completedTaskArray = []
     }
     
 }

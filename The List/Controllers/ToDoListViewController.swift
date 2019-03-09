@@ -10,19 +10,44 @@ import UIKit
 
 class ToDoListViewController: UIViewController {
     
+    @IBOutlet weak var todoItemTable: UITableView!
+    
     private var route: AuthenticateRoute = AuthenticateRoute()
+    private var itemShowViewModel: ItemShowViewModel = ItemShowViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage() // Added Background Image
         showNavigationBar()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(ToDoListViewController.handleAddItemDismiss), name: NSNotification.Name(rawValue: "addItemIsDismissed"), object: nil)
+        itemShowViewModel.getAllItemFromServer(userId: service.userModel.userId, completionHandler: {() in // Service TaskArray and CompletedTaskArray has been updated
+            self.todoItemTable.reloadData()
+        })
         // Do any additional setup after loading the view.
     }
- 
+    
 }
 
-extension ToDoListViewController{
+extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return service.taskArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoItem", for: indexPath as IndexPath)
+        cell.textLabel?.text = service.taskArray[indexPath.row].item
+        return cell
+    }
+    
+    
+}
+
+extension ToDoListViewController {
+    
+    @objc func handleAddItemDismiss(){
+        todoItemTable.reloadData()
+    }
+    
     @IBAction func addListAction(_ sender: Any) {
         var controller = route.routeToAddItem()
         self.navigationController?.present(controller, animated: true, completion: nil)
@@ -31,7 +56,6 @@ extension ToDoListViewController{
     @IBAction func completedListAction(_ sender: Any) {
         var controller = route.routeToCompletedItem()
         self.navigationController?.pushViewController(controller, animated: true)
-        
     }
     
     

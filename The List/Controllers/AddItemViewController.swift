@@ -45,7 +45,9 @@ class AddItemViewController: UIViewController {
 // Call Back Functions
 extension AddItemViewController{
     private func itemAddSuccess(){
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) { // Notify when the modal dissmiss with successful add
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addItemIsDismissed"), object: nil)
+        }
     }
     
     private func displayError(errorMessage: String){
