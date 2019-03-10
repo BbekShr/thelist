@@ -9,6 +9,7 @@
 import Foundation
 
 struct ItemModel {
+    var itemId: String
     var item: String
     var category: String
     var ownerId: String
@@ -19,6 +20,7 @@ struct ItemModel {
     var dateCompleted: String
     
     init(){
+        itemId = ""
         item = ""
         category = ""
         ownerId = ""

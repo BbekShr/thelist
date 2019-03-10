@@ -35,7 +35,7 @@ extension Service {
     func getTodayDate() -> String{
         let date = Date()
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.dateFormat = "MMMM-dd-yyyy"
         let formattedDate = format.string(from: date)
         return formattedDate
     }
@@ -52,4 +52,4 @@ extension Service {
     
 }
 
-var service = Service() // Class that is maintained throughout the app
+let service = Service() // Class that is maintained throughout the app

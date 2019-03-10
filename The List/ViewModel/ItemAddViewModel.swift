@@ -77,7 +77,8 @@ extension ItemAddViewModel {
     // Add Item to the Task Node
     // BEWARE: All Data need to verified and ready to use before performing this
     private func addItemToTask(itemModel: ItemModel){
-        self.databaseRef.ref.child("Tasks").childByAutoId().setValue([
+        let referenece = self.databaseRef.ref.child("Tasks").childByAutoId() // Reference to the Node
+        referenece.setValue([
             "Name" : itemModel.item,
             "Category" : itemModel.category,
             "OwnerId" : itemModel.ownerId,
@@ -86,8 +87,10 @@ extension ItemAddViewModel {
             "DateCompleted" : itemModel.dateCompleted,
             "DateReIssued" : itemModel.dateReIssued,
             "IsComplete" : itemModel.isCompleted
-        ]) // Set Data to Firebase
-       service.taskArray.insert(itemModel, at: 0) // Put The Item Model into the Service Task Array
+            ]) // Set Data to Firebase
+        var newItem = itemModel
+        newItem.itemId = referenece.key! // Get the node key for this task
+       service.taskArray.insert(newItem, at: 0) // Put The Item Model into the Service Task Array
     }
     
 }
@@ -99,20 +102,15 @@ extension ItemAddViewModel {
         self.getFriendIdList(userId: userId) { (friendIdArray) in
             var friendEmailArray: [String] = []
             if !friendIdArray.isEmpty { // Only Call if friendIdArray is not Empty
-                self.databaseRef.ref.child("Users").observeSingleEvent(of: .value, with: { (allUserSnapshot) in
-                    for userValue in allUserSnapshot.children {
-                        let userSnap = userValue as! DataSnapshot
-                        if friendIdArray.contains(userSnap.key) { // Get email from Friend ID
-                            let userDictonary = userSnap.value as! NSDictionary
-                            let friendEmail = userDictonary.value(forKey: "Email") as! String
-                            friendEmailArray.append(friendEmail) // List of Friend Email
-                            if friendEmailArray.count == friendIdArray.count { // Used for Optimization
-                                break
-                            }
-                        }
-                    }
-                    completionHandler(friendEmailArray) // Code To Call when we finalize the friend Email Array
-                })
+                let db = self.databaseRef.ref.child("Users")
+                for userId in friendIdArray {
+                    db.child(userId).observeSingleEvent(of: .value, with: { (allUserSnapshot) in
+                        let userDictonary = allUserSnapshot.value as! NSDictionary
+                        let friendEmail = userDictonary.value(forKey: "Email") as! String
+                        friendEmailArray.append(friendEmail) // List of Friend Email
+                        completionHandler(friendEmailArray) // Code To Call when we finalize the friend Email Array
+                    })
+                }
             }else {
                 completionHandler(friendEmailArray) // Code to call when we get the email Array
             }

@@ -41,9 +41,25 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 142
+    // Swipe to complete the task
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let completed = UIContextualAction(style: .normal, title: "Completed") { (action, view, nil) in
+            print(service.taskArray[indexPath.row].itemId)
+        }
+        completed.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [completed])
     }
+    
+    // Swipe to Delete the Task
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleted = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
+            self.itemShowViewModel.removeItemFromTask(itemIndex: indexPath.row)
+            self.todoItemTable.reloadData()
+        }
+        deleted.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [deleted])
+    }
+    
 }
 
 extension ToDoListViewController {
