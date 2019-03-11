@@ -10,11 +10,6 @@ import UIKit
 
 class FriendsViewController: UIViewController {
     
-    @IBAction func addFriendAction(_ sender: Any) {
-        
-    
-        
-    }
     
     @IBOutlet weak var friendTable: UITableView!
     var friendArray: [String] = []
@@ -29,7 +24,7 @@ class FriendsViewController: UIViewController {
         }
     }
     
-    
+  
 
 }
 
@@ -47,7 +42,46 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    private func itemAddSuccess(){
+        self.dismiss(animated: true) { // Notify when the modal dissmiss with successful add
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addItemIsDismissed"), object: nil)
+        }
+    }
+    
+    private func displayError(errorMessage: String){
+        let alert = service.getErrorAlertHandler(errorMessage: errorMessage, buttonString: "Continue")
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func addFriendAction(_ sender: Any) {
+        
+        var email: String = ""
+        let alert = UIAlertController(title: "Add Friend", message: "Please enter a email address below", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Input email here..."
+        })
+        
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
+            email = (alert.textFields?.first?.text)!
+            print(email)
+            self.itemAddViewModel.addFriend(friendEmail: email, successHandler: {
+
+                self.itemAddSuccess()
+            }, errorHandler: {(errorMessage) in
+                self.displayError(errorMessage: errorMessage)
+            })
+            
+        }))
+        
+        self.present(alert, animated: true)
+        
+    }
     
     
     
 }
+
+
+

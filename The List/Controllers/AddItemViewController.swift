@@ -23,10 +23,12 @@ class AddItemViewController: UIViewController {
         itemAddViewModel.getCategoryList(userId: service.userModel.userId) { (categoryArray) in
             self.renderDropDown(dropDownRef: self.categoryDropDown, valueArray: categoryArray)
         }
+        
         itemAddViewModel.getFriendEmailList(userId: service.userModel.userId) { (friendEmailArray) in
             self.renderDropDown(dropDownRef: self.friendDropDown, valueArray: friendEmailArray)
         }
     }
+    
     
     @IBAction func addItemAction(_ sender: Any) {
         itemAddViewModel.addItem(item: itemName.text!, category: categoryDropDown.text!, friendEmail: friendDropDown.text!, successHandler: {

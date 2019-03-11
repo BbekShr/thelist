@@ -214,3 +214,29 @@ extension ItemAddViewModel {
         }
     }
 }
+
+extension ItemAddViewModel {
+    
+    private func checkFriendEmail(friendEmail: String = "") -> Bool{
+        if !friendEmail.isEmpty{ // Check if the friendEmail is valid
+            if friendEmail.isValidEmail() { // Check if the email is valid format
+                return true
+            } else { errorMsg = "The format of the email is not correct"}
+        }
+        return false
+    }
+    
+    func addFriend(friendEmail: String = "", successHandler: @escaping () -> Void, errorHandler: @escaping (_ error: String) -> Void) {
+        if checkFriendEmail(friendEmail: friendEmail) { // Check if Data passes the initial Process
+            if !friendEmail.isEmpty && friendEmail != service.userModel.userEmail { // Need to Attach task to a friend too. Same Email as Friend Email will be treated as no friend
+                checkFriendId(friendEmail: friendEmail, completionHandler: {(friendId) in // Friend ID Found
+                    self.addFriendId(userId: service.userModel.userId, friendId: friendId, completionHandler: { })
+                }, notFoundHandler: {(errorMessage) in errorHandler(errorMessage)})
+            }else {errorHandler(errorMsg)}
+    }
+    
+ 
+}
+
+
+}
