@@ -34,7 +34,9 @@ class ToDoListViewController: UIViewController, UITabBarDelegate  {
         case "Sign Off": // Log Off The User
             print("signOFF Here")
             try! Auth.auth().signOut()
-            self.dismiss(animated: true, completion: nil)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "loginStoryBoardId") as! ViewController
+            self.navigationController?.pushViewController(controller, animated: true)
             return
         case "Friends":
             let storyBoard = UIStoryboard(name: "Friends", bundle: nil)
