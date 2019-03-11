@@ -46,6 +46,43 @@ extension ItemShowViewModel {
         self.taskNode.child(service.taskArray[itemIndex].itemId).removeValue() // Remove the node
         service.taskArray.remove(at: itemIndex) // Remove from the array
     }
+    
+    // Completes a task from the list
+    func completeTask(itemIndex: Int){
+        self.taskNode.child(service.taskArray[itemIndex].itemId).updateChildValues([
+            "IsComplete" : true,
+            "DateCompleted" : service.getTodayDate()
+            ]) // Update the Node in the task child
+        var itemModel = service.taskArray[itemIndex] // Creates a Item Model
+        itemModel.isCompleted = true
+        itemModel.dateCompleted = service.getTodayDate()
+        service.taskArray.remove(at: itemIndex)
+        service.completedTaskArray.insert(itemModel, at: 0)
+    }
+    
+    // Remove Item from CompletedTask Array
+    func removeItemFromCompleteTask(itemIndex: Int){
+        self.taskNode.child(service.completedTaskArray[itemIndex].itemId).removeValue() // Remove the node
+        service.completedTaskArray.remove(at: itemIndex) // Remove from the array
+    }
+    
+    // Get all the Items of a particular Category
+    func getItemsByCategory(category: String) -> [ItemModel]{
+        var itemsArray: [ItemModel] = []
+        // Search the task Array
+        for item in service.taskArray {
+            if item.category == category { // Category Matched
+                itemsArray.insert(item, at: 0) // Insert inside the final array
+            }
+        }
+        // Search the Complete task Array
+        for item in service.completedTaskArray {
+            if item.category == category { // Category Matched
+                itemsArray.insert(item, at: 0)
+            }
+        }
+        return itemsArray
+    }
 }
 
 // Private Func Goes Here
@@ -53,7 +90,6 @@ extension ItemShowViewModel {
     
     // Creates the Item Model Data Struct
     private func setItemModel(itemObject: NSDictionary, itemId: String) -> ItemModel {
-        print(itemObject)
         var itemModel: ItemModel = ItemModel(
             item: itemObject.value(forKey: "Name") as! String,
             category: itemObject.value(forKey: "Category") as! String,

@@ -13,6 +13,8 @@
 		425A16A8222EF8C500884ABB /* CatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */; };
 		425A16AA222EFD9600884ABB /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425A16A9222EFD9600884ABB /* Friends.storyboard */; };
 		425A16AC222EFDB100884ABB /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A16AB222EFDB100884ABB /* FriendsViewController.swift */; };
+		49079EE622361C57000DD3EF /* CategoryItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49079EE522361C57000DD3EF /* CategoryItems.storyboard */; };
+		49079EE822361C75000DD3EF /* CategoryItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079EE722361C75000DD3EF /* CategoryItemsViewController.swift */; };
 		498F0010222BA8BA003E7353 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F000F222BA8BA003E7353 /* UserModel.swift */; };
 		498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */; };
 		498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */; };
@@ -51,6 +53,8 @@
 		425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesViewController.swift; sourceTree = "<group>"; };
 		425A16A9222EFD9600884ABB /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		425A16AB222EFDB100884ABB /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		49079EE522361C57000DD3EF /* CategoryItems.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryItems.storyboard; sourceTree = "<group>"; };
+		49079EE722361C75000DD3EF /* CategoryItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemsViewController.swift; sourceTree = "<group>"; };
 		498F000F222BA8BA003E7353 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		498F0012222BAA79003E7353 /* UserAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		498F0014222C7DA0003E7353 /* DatabaseReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceModel.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				425A16A3222EF5F400884ABB /* CompletedListViewController.swift */,
 				425A16A7222EF8C500884ABB /* CatagoriesViewController.swift */,
 				425A16AB222EFDB100884ABB /* FriendsViewController.swift */,
+				49079EE722361C75000DD3EF /* CategoryItemsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				425A16A1222EF5A500884ABB /* CompletedList.storyboard */,
 				425A16A5222EF8A900884ABB /* Catagories.storyboard */,
 				425A16A9222EFD9600884ABB /* Friends.storyboard */,
+				49079EE522361C57000DD3EF /* CategoryItems.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				425A16A2222EF5A500884ABB /* CompletedList.storyboard in Resources */,
 				498F001B222CBA80003E7353 /* ToDoList.storyboard in Resources */,
 				FB2088B122279C1D0026A15F /* LaunchScreen.storyboard in Resources */,
+				49079EE622361C57000DD3EF /* CategoryItems.storyboard in Resources */,
 				FB2088D722288B520026A15F /* GoogleService-Info.plist in Resources */,
 				FB2088AE22279C1D0026A15F /* Assets.xcassets in Resources */,
 				49DEC2E62233A59400C2CD78 /* ItemCellTableViewCell.xib in Resources */,
@@ -362,6 +369,7 @@
 				FB2088A922279C180026A15F /* ViewController.swift in Sources */,
 				425A16AC222EFDB100884ABB /* FriendsViewController.swift in Sources */,
 				498F0013222BAA79003E7353 /* UserAuthenticationViewModel.swift in Sources */,
+				49079EE822361C75000DD3EF /* CategoryItemsViewController.swift in Sources */,
 				498F0015222C7DA0003E7353 /* DatabaseReferenceModel.swift in Sources */,
 				49BFFFA02231840A00068FC6 /* ItemAddViewModel.swift in Sources */,
 				498F0023222DD804003E7353 /* ExtensionUIViewController.swift in Sources */,

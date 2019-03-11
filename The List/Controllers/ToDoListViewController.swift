@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class ToDoListViewController: UIViewController {
+class ToDoListViewController: UIViewController, UITabBarDelegate  {
     
     @IBOutlet weak var todoItemTable: UITableView!
     
@@ -28,6 +29,28 @@ class ToDoListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.title! {
+        case "Sign Off": // Log Off The User
+            print("signOFF Here")
+            try! Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+            return
+        case "Friends":
+            let storyBoard = UIStoryboard(name: "Friends", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "FriendsViewId") as! FriendsViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+            return
+        case "Categories":
+            let storyBoard = UIStoryboard(name: "Catagories", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "CatagoriesId") as! CatagoriesViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+            return
+        default:
+            return
+        }
+    }
+    
 }
 
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,7 +67,8 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     // Swipe to complete the task
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let completed = UIContextualAction(style: .normal, title: "Completed") { (action, view, nil) in
-            print(service.taskArray[indexPath.row].itemId)
+            self.itemShowViewModel.completeTask(itemIndex: indexPath.row) // Complete Task
+            self.todoItemTable.reloadData()
         }
         completed.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         return UISwipeActionsConfiguration(actions: [completed])
@@ -77,9 +101,5 @@ extension ToDoListViewController {
         var controller = route.routeToCompletedItem()
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
-    
-    
     
 }

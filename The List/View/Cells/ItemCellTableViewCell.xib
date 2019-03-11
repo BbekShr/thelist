@@ -104,6 +104,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryText" destination="gIk-3s-4Us" id="fZG-Nv-Bol"/>
+                <outlet property="dateLabel" destination="TeV-gI-tdN" id="fog-Tn-0GF"/>
                 <outlet property="dateText" destination="6m8-1v-UFs" id="n6d-hr-lQl"/>
                 <outlet property="friendText" destination="5zI-ZZ-ZPg" id="Ike-vB-BFZ"/>
                 <outlet property="itemText" destination="ZWJ-xQ-jYg" id="Eoh-rd-23G"/>

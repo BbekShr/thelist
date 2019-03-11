@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,20 +10,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Friends View Controller-->
+        <!--Friends List-->
         <scene sceneID="dHK-IW-d5S">
             <objects>
                 <viewController storyboardIdentifier="FriendsViewId" id="q4d-xG-44N" customClass="FriendsViewController" customModule="The_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oRj-u2-oQu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5N1-JY-z0P">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCellId" textLabel="BYX-DI-cbk" style="IBUITableViewCellStyleDefault" id="nM3-Jp-Yar">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nM3-Jp-Yar" id="jta-vf-leg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BYX-DI-cbk">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="q4d-xG-44N" id="J9z-xV-zsX"/>
+                                    <outlet property="delegate" destination="q4d-xG-44N" id="0dr-VG-ae6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5N1-JY-z0P" firstAttribute="leading" secondItem="XJV-pD-htH" secondAttribute="leading" id="B0B-CH-9UY"/>
+                            <constraint firstItem="5N1-JY-z0P" firstAttribute="top" secondItem="XJV-pD-htH" secondAttribute="top" id="G5v-gP-eRR"/>
+                            <constraint firstItem="XJV-pD-htH" firstAttribute="bottom" secondItem="5N1-JY-z0P" secondAttribute="bottom" id="XD2-YF-2Ny"/>
+                            <constraint firstItem="XJV-pD-htH" firstAttribute="trailing" secondItem="5N1-JY-z0P" secondAttribute="trailing" id="Ya1-kt-cAv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XJV-pD-htH"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Friends List" id="fDv-h8-Xi7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="eYL-CP-Edi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" id="CW7-Q9-q8o">
+                            <color key="tintColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="friendTable" destination="5N1-JY-z0P" id="Fmi-jf-Moq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNx-Ir-yre" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="-20"/>
+            <point key="canvasLocation" x="950.72463768115949" y="-20.089285714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JSM-MU-iAQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ron-xe-8w5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p2v-Gw-Jja">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q4d-xG-44N" kind="relationship" relationship="rootViewController" id="7P5-tc-vqb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVe-e2-0b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="-20.089285714285712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" width="18.399999618530273" height="18.399999618530273"/>
+    </resources>
 </document>

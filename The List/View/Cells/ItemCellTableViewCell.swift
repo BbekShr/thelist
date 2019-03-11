@@ -14,6 +14,7 @@ class ItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryText: UILabel!
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var friendText: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +30,18 @@ class ItemCellTableViewCell: UITableViewCell {
     func commonInit(itemModel: ItemModel){
         itemText.text = itemModel.item
         categoryText.text = itemModel.category
-        dateText.text = itemModel.dateAdded
-        friendText.text = itemModel.friendId
+        var friendName = "Not Assigned"
+        if !itemModel.friendId.isEmpty { // Friend is assigned
+            friendName = itemModel.friendId
+        }
+        friendText.text = friendName
+        if itemModel.isCompleted { // Task is Completed
+            dateLabel.text = "Date Completed:"
+            dateText.text = itemModel.dateCompleted
+        } else {
+            dateLabel.text = "Date Added:"
+            dateText.text = itemModel.dateAdded
+        }
     }
     
 }
