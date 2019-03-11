@@ -10,6 +10,12 @@ import UIKit
 
 class FriendsViewController: UIViewController {
     
+    @IBAction func addFriendAction(_ sender: Any) {
+        
+    
+        
+    }
+    
     @IBOutlet weak var friendTable: UITableView!
     var friendArray: [String] = []
     private var itemAddViewModel: ItemAddViewModel = ItemAddViewModel()
@@ -22,10 +28,14 @@ class FriendsViewController: UIViewController {
             self.friendTable.reloadData()
         }
     }
+    
+    
 
 }
 
 extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendArray.count
     }
@@ -33,6 +43,11 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCellId", for: indexPath as IndexPath)
         cell.textLabel?.text = friendArray[indexPath.row]
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
+    
+    
+    
+    
 }

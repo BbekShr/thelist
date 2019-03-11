@@ -36,6 +36,7 @@ extension CatagoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCellId", for: indexPath as IndexPath)
         cell.textLabel?.text = categoryArray[indexPath.row]
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     
@@ -46,5 +47,6 @@ extension CatagoriesViewController: UITableViewDelegate, UITableViewDataSource {
         controller.category = categoryArray[indexPath.row]
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
     
 }

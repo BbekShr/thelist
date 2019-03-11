@@ -60,6 +60,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="eYL-CP-Edi"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" id="CW7-Q9-q8o">
                             <color key="tintColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addFriendAction:" destination="q4d-xG-44N" id="TcH-R5-fp5"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

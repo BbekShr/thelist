@@ -12,6 +12,7 @@ class CategoryItemsViewController: UIViewController {
     
     @IBOutlet weak var categoryItemTable: UITableView!
     
+    public var titleName: String = ""
     public var category: String = ""
     public var categoryItemsArray: [ItemModel] = []
     private var itemShowViewModel: ItemShowViewModel = ItemShowViewModel()
@@ -19,7 +20,9 @@ class CategoryItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
-        self.navigationController?.title = category
+        
+        //self.navigationController?.title = category
+        self.title = category   //set title
         categoryItemsArray = itemShowViewModel.getItemsByCategory(category: category) // Store the category item in array. Contains completed and not completed task
         let nibname = UINib(nibName: "ItemCellTableViewCell", bundle: nil)
         categoryItemTable.register(nibname, forCellReuseIdentifier: "itemCellId")
