@@ -37,6 +37,7 @@ extension CategoryItemsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCellId", for: indexPath as IndexPath) as! ItemCellTableViewCell
         cell.commonInit(itemModel: categoryItemsArray[indexPath.row]) // Pass the Item Model
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     
