@@ -17,6 +17,7 @@ class CompletedListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
+        self.title = "Completed List"
         let nibName = UINib(nibName: "ItemCellTableViewCell", bundle: nil)
         completeItemTable.register(nibName, forCellReuseIdentifier: "itemCellId")
     }
