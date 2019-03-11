@@ -40,5 +40,6 @@ struct ItemModel {
         self.dateAdded = dateAdded
         self.dateReIssued = dateReIssued
         self.dateCompleted = dateCompleted
+        self.ownerId = ownerId
     }
 }

@@ -13,6 +13,7 @@ class FriendsViewController: UIViewController {
     
     @IBOutlet weak var friendTable: UITableView!
     var friendArray: [String] = []
+    var friendEmail: String = ""
     private var itemAddViewModel: ItemAddViewModel = ItemAddViewModel()
 
     override func viewDidLoad() {
@@ -23,9 +24,6 @@ class FriendsViewController: UIViewController {
             self.friendTable.reloadData()
         }
     }
-    
-  
-
 }
 
 extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -42,10 +40,11 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    private func itemAddSuccess(){
-        self.dismiss(animated: true) { // Notify when the modal dissmiss with successful add
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addItemIsDismissed"), object: nil)
-        }
+    private func addSuccess(){
+        print(friendEmail)
+        friendArray.insert(friendEmail, at: 0)
+        print(friendArray)
+        friendTable.reloadData()
     }
     
     private func displayError(errorMessage: String){
@@ -55,7 +54,7 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func addFriendAction(_ sender: Any) {
         
-        var email: String = ""
+        // var email: String = ""
         let alert = UIAlertController(title: "Add Friend", message: "Please enter a email address below", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         alert.addTextField(configurationHandler: { textField in
@@ -64,11 +63,12 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
-            email = (alert.textFields?.first?.text)!
+            let email = (alert.textFields?.first?.text)!
+            self.friendEmail = email
             print(email)
+            print(self.friendEmail)
             self.itemAddViewModel.addFriend(friendEmail: email, successHandler: {
-
-                self.itemAddSuccess()
+                self.addSuccess()
             }, errorHandler: {(errorMessage) in
                 self.displayError(errorMessage: errorMessage)
             })

@@ -31,4 +31,14 @@ struct User {
         self.firstName = firstName
         self.lastName = lastName
     }
+    
+    // Complete UserModel Initiate
+    init(userEmail: String, userId: String, firstName: String, lastName: String, categoryList: [String], friendList: [String]) {
+        self.userEmail = userEmail
+        self.userId = userEmail
+        self.firstName = firstName
+        self.lastName = lastName
+        self.categoryList = categoryList
+        self.friendList = friendList
+    }
 }

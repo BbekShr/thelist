@@ -15,6 +15,9 @@ class ItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var friendText: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var friendLabel: UILabel!
+    
+    private var itemShowViewModel: ItemShowViewModel = ItemShowViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +33,29 @@ class ItemCellTableViewCell: UITableViewCell {
     func commonInit(itemModel: ItemModel){
         itemText.text = itemModel.item
         categoryText.text = itemModel.category
-        var friendName = "Not Assigned"
+        friendSectorHandling(itemModel: itemModel) // Handles the friend sector
+        dateSectorHandling(itemModel: itemModel) // Handles the date sector
+    }
+    
+    // Handles the friend sector and all the logic
+    private func friendSectorHandling(itemModel: ItemModel){
+        friendLabel.text = "Friend: "
         if !itemModel.friendId.isEmpty { // Friend is assigned
-            friendName = itemModel.friendId
+            var userId = itemModel.friendId // Id of the friend
+            if userId == service.userModel.userId { // Current User is assigned to this task
+                friendLabel.text = "Added By:"
+                userId = itemModel.ownerId // get the id of the user that assigned this task to current user
+            }
+            itemShowViewModel.getUserDetails(for: userId) { (userModel) in // Get User detail from firebase
+                self.friendText.text = ("\(userModel.firstName) \(userModel.lastName)") // Update the text label
+            }
+        }else {
+            friendText.text = "Not Assigned"
         }
-        friendText.text = friendName
+    }
+    
+    // Handles the date sector and all logic
+    private func dateSectorHandling(itemModel: ItemModel){
         if itemModel.isCompleted { // Task is Completed
             dateLabel.text = "Date Completed:"
             dateText.text = itemModel.dateCompleted

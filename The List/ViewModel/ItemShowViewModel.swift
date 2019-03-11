@@ -83,6 +83,26 @@ extension ItemShowViewModel {
         }
         return itemsArray
     }
+    
+    // Get all the details for a user. Get empty user Model if not found
+    func getUserDetails(for userId: String, completionHandler: @escaping (_ userModel: User) -> Void){
+        self.databaseRef.ref.child("Users").child(userId).observeSingleEvent(of: .value) { (userSnapshot) in
+            if userSnapshot.exists() { // User Node Found
+                let userDictonary = userSnapshot.value as! NSDictionary
+                let userData: User = User(
+                    userEmail: userDictonary.value(forKey: "Email") as! String,
+                    userId: userSnapshot.key,
+                    firstName: userDictonary.value(forKey: "FirstName") as! String,
+                    lastName: userDictonary.value(forKey: "LastName") as! String,
+                    categoryList: [],
+                    friendList: []
+                ) // User Model with all the populated data from firebase
+                completionHandler(userData) // Code after everything is successful
+            } else {
+                completionHandler(User()) // Send an empty User Model
+            }
+        }
+    }
 }
 
 // Private Func Goes Here

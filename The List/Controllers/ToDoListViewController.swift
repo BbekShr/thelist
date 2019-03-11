@@ -36,6 +36,7 @@ class ToDoListViewController: UIViewController, UITabBarDelegate  {
             try! Auth.auth().signOut()
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "loginStoryBoardId") as! ViewController
+            service.resetAllProperties() // Reset all Properties for Fresh Use
             self.navigationController?.pushViewController(controller, animated: true)
             return
         case "Friends":

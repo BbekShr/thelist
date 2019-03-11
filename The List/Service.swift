@@ -45,6 +45,12 @@ extension Service {
         alert.addAction(UIAlertAction(title: buttonString, style: .destructive, handler: nil))
         return alert
     }
+    
+    func resetAllProperties(){
+        userModel = User()
+        taskArray = []
+        completedTaskArray = []
+    }
 }
 
 // All Private function Go Here
