@@ -30,6 +30,7 @@ class ToDoListViewController: UIViewController, UITabBarDelegate  {
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        addBackgroundImage() 
         switch item.title! {
         case "Sign Off": // Log Off The User
             print("signOFF Here")

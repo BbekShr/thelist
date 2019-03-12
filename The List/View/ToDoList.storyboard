@@ -27,7 +27,7 @@
                                 </connections>
                             </tableView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lip-E1-nqG">
-                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <rect key="frame" x="-44" y="813" width="502" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Sign Off" image="power-button" id="xBb-29-MUP"/>
@@ -45,14 +45,15 @@
                             <constraint firstAttribute="bottom" secondItem="lip-E1-nqG" secondAttribute="bottom" id="0Uz-BX-boo"/>
                             <constraint firstItem="ncW-Vw-kQJ" firstAttribute="top" secondItem="1Ed-Y9-48v" secondAttribute="top" id="1nr-Yr-KUc"/>
                             <constraint firstItem="lip-E1-nqG" firstAttribute="top" secondItem="ncW-Vw-kQJ" secondAttribute="bottom" id="1pc-Hg-knT"/>
-                            <constraint firstItem="lip-E1-nqG" firstAttribute="leading" secondItem="ncW-Vw-kQJ" secondAttribute="leading" id="3E0-mi-TRm"/>
+                            <constraint firstItem="lip-E1-nqG" firstAttribute="leading" secondItem="1Ed-Y9-48v" secondAttribute="leading" constant="-44" id="5sg-Rb-eRF"/>
                             <constraint firstItem="1Ed-Y9-48v" firstAttribute="trailing" secondItem="ncW-Vw-kQJ" secondAttribute="trailing" id="9hh-f0-7ew"/>
-                            <constraint firstItem="lip-E1-nqG" firstAttribute="trailing" secondItem="ncW-Vw-kQJ" secondAttribute="trailing" id="WOp-dR-4cQ"/>
+                            <constraint firstItem="lip-E1-nqG" firstAttribute="trailing" secondItem="1Ed-Y9-48v" secondAttribute="trailing" constant="44" id="fZf-qr-VaD"/>
                             <constraint firstItem="ncW-Vw-kQJ" firstAttribute="leading" secondItem="1Ed-Y9-48v" secondAttribute="leading" id="jrZ-7M-L5q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Ed-Y9-48v"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDo List" id="O59-R1-qcd">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GbR-iV-q34"/>
                         <barButtonItem key="leftBarButtonItem" image="menu" id="atf-iq-5ne">
                             <color key="tintColor" red="0.89412146810000004" green="0.89412027599999999" blue="0.92647093530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -72,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTr-Ca-8SR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730.43478260869574" y="82.366071428571431"/>
+            <point key="canvasLocation" x="729.91071428571422" y="81.159420289855078"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ad-yc-kYH">

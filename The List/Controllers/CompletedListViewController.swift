@@ -20,6 +20,7 @@ class CompletedListViewController: UIViewController {
         self.title = "Completed List"
         let nibName = UINib(nibName: "ItemCellTableViewCell", bundle: nil)
         completeItemTable.register(nibName, forCellReuseIdentifier: "itemCellId")
+        
     }
 }
 
@@ -30,6 +31,7 @@ extension CompletedListViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCellId", for: indexPath as IndexPath) as! ItemCellTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.commonInit(itemModel: service.completedTaskArray[indexPath.row]) // Setup Data in the cell
         return cell
     }
