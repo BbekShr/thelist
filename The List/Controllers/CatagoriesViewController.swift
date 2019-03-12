@@ -23,7 +23,7 @@ class CatagoriesViewController: UIViewController {
             self.categoryArray = categoryList
             self.categoryTableView.reloadData()
         }
-        // Do any additional setup after loading the view.
+        self.title = "Categories"
     }
     
 }
