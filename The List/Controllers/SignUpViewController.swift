@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func goBackLoginAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

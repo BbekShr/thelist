@@ -39,7 +39,7 @@ class ItemCellTableViewCell: UITableViewCell {
     
     // Handles the friend sector and all the logic
     private func friendSectorHandling(itemModel: ItemModel){
-        friendLabel.text = "Friend: "
+        friendLabel.text = "Assigned To: "
         if !itemModel.friendId.isEmpty { // Friend is assigned
             var userId = itemModel.friendId // Id of the friend
             if userId == service.userModel.userId { // Current User is assigned to this task
@@ -50,7 +50,7 @@ class ItemCellTableViewCell: UITableViewCell {
                 self.friendText.text = ("\(userModel.firstName) \(userModel.lastName)") // Update the text label
             }
         }else {
-            friendText.text = "Not Assigned"
+            friendText.text = "\(service.userModel.firstName) \(service.userModel.lastName)"
         }
     }
     

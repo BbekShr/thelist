@@ -34,6 +34,7 @@
                                     <tabBarItem title="Friends" image="avatar" id="4ED-1Z-eNk"/>
                                     <tabBarItem title="Categories" image="icon" id="2Aa-2S-usa"/>
                                 </items>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.36406221985816956" green="0.34507477283477783" blue="0.37748783826828003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="zNh-25-F8C" id="5cn-9P-1DG"/>

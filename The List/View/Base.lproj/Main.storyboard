@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-K7-gm4">
-                                <rect key="frame" x="124" y="247" width="166" height="45"/>
+                                <rect key="frame" x="52" y="247" width="310" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-73-n55">
-                                <rect key="frame" x="147" y="540" width="120" height="28"/>
+                                <rect key="frame" x="52" y="540" width="310" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="Create an Account">
                                     <color key="titleColor" red="1" green="0.99605193224708333" blue="0.98679479002554515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,10 +79,10 @@
                             <constraint firstItem="Sdr-C5-RGw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8zP-ix-nQF"/>
                             <constraint firstItem="zjJ-K7-gm4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="159" id="9lQ-KX-qbH"/>
                             <constraint firstItem="YAb-h2-aAw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="52" id="BDY-NY-jGu"/>
-                            <constraint firstItem="QnP-73-n55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="Bj5-ZH-KTt"/>
-                            <constraint firstItem="zjJ-K7-gm4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="GEo-jq-cV6"/>
+                            <constraint firstItem="QnP-73-n55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="Bj5-ZH-KTt"/>
+                            <constraint firstItem="zjJ-K7-gm4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="GEo-jq-cV6"/>
                             <constraint firstItem="Yeg-7S-EaQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KZk-7J-1oV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zjJ-K7-gm4" secondAttribute="trailing" constant="124" id="QIm-Qh-a5g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zjJ-K7-gm4" secondAttribute="trailing" constant="52" id="QIm-Qh-a5g"/>
                             <constraint firstItem="YAb-h2-aAw" firstAttribute="top" secondItem="zjJ-K7-gm4" secondAttribute="bottom" constant="14" id="Ysx-rx-fSO"/>
                             <constraint firstItem="dPN-FL-Db6" firstAttribute="top" secondItem="Yeg-7S-EaQ" secondAttribute="bottom" constant="38" id="bZu-ef-UXm"/>
                             <constraint firstItem="QnP-73-n55" firstAttribute="top" secondItem="dPN-FL-Db6" secondAttribute="bottom" id="eKw-P0-tre"/>
@@ -90,14 +90,16 @@
                             <constraint firstItem="Sdr-C5-RGw" firstAttribute="top" secondItem="YAb-h2-aAw" secondAttribute="bottom" constant="23" id="l8l-kN-8jv"/>
                             <constraint firstItem="Sdr-C5-RGw" firstAttribute="top" secondItem="zjJ-K7-gm4" secondAttribute="bottom" constant="80" id="lrl-xp-OeX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yeg-7S-EaQ" secondAttribute="trailing" constant="52" id="qMb-FA-rdh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QnP-73-n55" secondAttribute="trailing" constant="147" id="tdC-fZ-ljN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QnP-73-n55" secondAttribute="trailing" constant="52" id="tdC-fZ-ljN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdr-C5-RGw" secondAttribute="trailing" constant="52" id="xt9-kB-ztk"/>
                             <constraint firstAttribute="trailing" secondItem="YAb-h2-aAw" secondAttribute="trailing" constant="52" id="yJQ-x3-3GA"/>
                             <constraint firstItem="zjJ-K7-gm4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zcl-ij-TOZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yOm-AI-4P0"/>
+                    <navigationItem key="navigationItem" id="yOm-AI-4P0">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1pw-fk-4Lu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailText" destination="Sdr-C5-RGw" id="q09-3n-eFP"/>
                         <outlet property="errorMessageText" destination="YAb-h2-aAw" id="Hyc-xo-Msb"/>

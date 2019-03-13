@@ -43,7 +43,6 @@ class ViewController: UIViewController {
         let signUpController = storyBoard.instantiateViewController(withIdentifier: "SignUpId") as! SignUpViewController
         self.navigationController?.pushViewController(signUpController, animated: true)
     }
-
 }
 
 // Call Back Functions for View Model

@@ -16,7 +16,7 @@ class CategoryItemsViewController: UIViewController {
     public var category: String = ""
     public var categoryItemsArray: [ItemModel] = []
     private var itemShowViewModel: ItemShowViewModel = ItemShowViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
